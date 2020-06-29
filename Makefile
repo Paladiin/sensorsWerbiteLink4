@@ -18,4 +18,9 @@ else
 	SHARELIB_FLAGS = --shared
 endif
 
-a
+all: $(MODULE_NAME).so
+
+LIB_H += $(wildcard *.h)
+
+OBJECTS += socket.o
+OBJECTS +

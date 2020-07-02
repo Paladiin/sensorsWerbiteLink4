@@ -35,4 +35,8 @@ $(MODULE_NAME).so: $(OBJECTS)
 	$(CC) $(SHARELIB_FLAGS) -o $@ $^
 
 install: all
-	$(INSTALL_DATA) $(MODULE_NAME).so $(PREFIX)/lib/lua/$(LUA_VERS
+	$(INSTALL_DATA) $(MODULE_NAME).so $(PREFIX)/lib/lua/$(LUA_VERSION)/$(MODULE_NAME).so
+
+uninstall:
+	$(RM) $(PREFIX)/lib/lua/$(LUA_VERSION)/$(MODULE_NAME).so
+

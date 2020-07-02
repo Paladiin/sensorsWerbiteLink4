@@ -32,4 +32,7 @@ $(OBJECTS): %.o: %.c
 	$(CC) -o $*.o -c $(ALL_CFLAGS) $<
 
 $(MODULE_NAME).so: $(OBJECTS)
-	$(CC) $(SHARELIB_FLAGS
+	$(CC) $(SHARELIB_FLAGS) -o $@ $^
+
+install: all
+	$(INSTALL_DATA) $(MODULE_NAME).so $(PREFIX)/lib/lua/$(LUA_VERS

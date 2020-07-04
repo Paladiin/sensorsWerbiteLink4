@@ -40,3 +40,8 @@ install: all
 uninstall:
 	$(RM) $(PREFIX)/lib/lua/$(LUA_VERSION)/$(MODULE_NAME).so
 
+test: all
+	@prove --exec=lua --timer t/test-*.lua
+
+tags:
+	find . \( -name .git -type d -prun

@@ -48,4 +48,7 @@ tags:
 
 clean:
 	$(RM) $(MODULE_NAME).so
-	$(RM) -r $(MO
+	$(RM) -r $(MODULE_NAME).so.dSYM
+	$(RM) $(OBJECTS)
+
+.PHONY: all install uninstall clean test tags

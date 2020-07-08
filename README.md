@@ -205,3 +205,59 @@ describing the error.
     `ok, err = udpsock:send(data, host, port)`
     `ok, err = udpsock:send(data, "unix:/path/to/unix-domain.sock")`
    
+Writes data on the current UDP or datagram unix domain socket object to
+specified address.
+
+In case of success, it returns true. Otherwise, it returns nil and a string
+describing the error.
+
+#### udpsock:close
+  
+    `ok, err = udpsock:close()`
+
+Closes the current UDP or datagram unix domain socket. It returns the 1 in
+case of success and returns nil with a string describing the error otherwise.
+
+#### udpsock:fileno
+
+    `fd = udpsock:fileno()`
+
+#### udpsock:settimeout
+
+    `udpsock:settimeout(timeout)`
+
+#### udpsock:gettimeout
+
+    `timeout = udpsock:gettimeout()`
+
+### Contants
+
+Module infos:
+    
+  * socket._VERSION
+
+OPT_* are tcpsock:setopt and tcpsock:getopt parameters:
+
+  * socket.OPT_TCP_NODELAY
+  * socket.OPT_TCP_KEEPALIVE
+  * socket.OPT_TCP_REUSEADDR
+
+SHUT_* are tcpsock:shutdown() parameters:
+
+  * socket.SHUT_RD
+  * socket.SHUT_WR
+  * socket.SHUT_RDWR
+
+ERROR_* are predefined error strings, which can be used to detect errors:
+
+  * socket.ERROR_TIMEOUT
+  * socket.ERROR_CLOSED
+  * socket.ERROR_REFUSED
+
+## References
+
+1. http://w3.impa.br/~diego/software/luasocket/reference.html
+2. http://golang.org/pkg/net/
+3. http://docs.python.org/py3k/library/socket.html
+4. http://www.lua.org/manual/5.2/
+5. https://github.com/fperrad/lua-TestMore.git

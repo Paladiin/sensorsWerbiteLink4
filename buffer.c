@@ -18,4 +18,12 @@ buffer_create(size_t size)
 
     buf->pos = buf->start;
     buf->last = buf->start;
-    buf->end = buf->start + s
+    buf->end = buf->start + size;
+
+    return buf;
+}
+
+/**
+ * Shrink the buffer.
+ *
+ * Move string to starting poin

@@ -26,4 +26,9 @@ buffer_create(size_t size)
 /**
  * Shrink the buffer.
  *
- * Move string to starting poin
+ * Move string to starting point of buffer.
+ */
+void
+buffer_shrink(struct buffer *buf)
+{
+    memmove(buf->start, buf->pos, buf-

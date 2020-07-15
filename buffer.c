@@ -33,4 +33,11 @@ buffer_shrink(struct buffer *buf)
 {
     memmove(buf->start, buf->pos, buf->last - buf->pos);
     buf->last = buf->start + (buf->last - buf->pos);
-    buf->pos = buf-
+    buf->pos = buf->start;
+}
+
+/**
+ * Grow buffer extra size.
+ */
+int
+buffer_grow(struct buffer *buf, size_t

@@ -49,4 +49,7 @@ buffer_grow(struct buffer *buf, size_t extra)
 
     size_t pos_off = buf->pos - buf->start;
     size_t last_off = buf->last - buf->start;
- 
+        
+    buf->start = realloc(buf->start, size);
+    if (buf->start == NULL)
+        r

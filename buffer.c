@@ -56,4 +56,13 @@ buffer_grow(struct buffer *buf, size_t extra)
 
     buf->pos = buf->start + pos_off;
     buf->last = buf->start + last_off;
-    
+    buf->end = buf->start + size;
+
+    return 0;
+}
+
+/**
+ * Delete the buffer.
+ */
+void
+buffer_delete(str

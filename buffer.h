@@ -5,4 +5,7 @@
  */
 
 #include <stdlib.h>
-#i
+#include <string.h>
+
+struct buffer {
+    char *pos;      /* start position of string */

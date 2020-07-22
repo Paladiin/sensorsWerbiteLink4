@@ -14,4 +14,6 @@ struct buffer {
     char *end;      /* end of buffer */
 };
 
-#define buffer_size(buf)      (buf->last - buf->p
+#define buffer_size(buf)      (buf->last - buf->pos)
+#define buffer_available(buf) (buf->end - buf->last)
+#define buffer_capacity(buf)

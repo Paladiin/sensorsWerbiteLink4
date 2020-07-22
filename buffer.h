@@ -11,3 +11,7 @@ struct buffer {
     char *pos;      /* start position of string */
     char *last;     /* end position of string */
     char *start;    /* start of buffer */
+    char *end;      /* end of buffer */
+};
+
+#define buffer_size(buf)      (buf->last - buf->p

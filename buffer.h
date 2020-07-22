@@ -9,3 +9,5 @@
 
 struct buffer {
     char *pos;      /* start position of string */
+    char *last;     /* end position of string */
+    char *start;    /* start of buffer */

@@ -16,4 +16,7 @@ struct buffer {
 
 #define buffer_size(buf)      (buf->last - buf->pos)
 #define buffer_available(buf) (buf->end - buf->last)
-#define buffer_capacity(buf)
+#define buffer_capacity(buf)  (buf->end - buf->start)
+
+struct buffer *buffer_create(size_t size);
+void buffer_shrink(str

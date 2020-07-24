@@ -21,4 +21,6 @@ struct buffer {
 struct buffer *buffer_create(size_t size);
 void buffer_shrink(struct buffer *buf);
 int buffer_grow(struct buffer *buf, size_t extra);
-void buffer_delete(struct buf
+void buffer_delete(struct buffer *buf);
+
+#endif

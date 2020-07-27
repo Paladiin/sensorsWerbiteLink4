@@ -58,3 +58,58 @@ if arg[1] == "sequence" then
     while true do
       local data, err, partial = sock:read(8192)
       if err then
+        if err == socket.ERROR_CLOSED then
+          data = partial
+        end
+      end
+      if contents[path] == nil then
+        contents[path] = data
+      else
+        contents[path] = contents[path] .. data
+      end
+      if err then
+        break
+      end
+    end
+  end
+else
+  print("selecting...")
+  local threads = {}
+
+  for i, path in ipairs(paths) do
+    local sock = socket.tcp()
+    local thread = coroutine.create(function () worker(sock, path) end)
+    coroutine.resume(thread) -- initialize
+    threads[sock:fileno()] = thread
+  end
+
+  while true do
+    local fds = {}
+    for fd, _ in pairs(threads) do
+      table.insert(fds, fd)
+    end
+
+    if 0 == #fds then
+      -- no more to do
+      break
+    end
+
+    local readfds, writefds, err = socket.select(fds, fds)
+
+    if err then
+      print(err)
+      os.exit()
+    elseif readfds then
+      for _, fd in ipairs(readfds) do
+        local status, result = coroutine.resume(threads[fd])
+        if result == nil then
+          threads[fd] = nil
+        end
+      end
+    end
+  end
+end
+
+for _, path in ipairs(paths) do
+  print(path, #contents[path])
+end

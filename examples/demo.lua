@@ -7,4 +7,6 @@ if err then
 end
 tcpsock:write("GET / HTTP/1.1\r\n")
 tcpsock:write("\r\n")
-tcpsock
+tcpsock:settimeout(1)
+data, err, partial = tcpsock:read(1024)
+if err == socket.ERRO

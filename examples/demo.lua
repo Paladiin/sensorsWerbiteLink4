@@ -13,4 +13,4 @@ if err == socket.ERROR_TIMEOUT then
   data = partial
 end
 io.output():write(data)
-tcpsock:close(
+tcpsock:close()

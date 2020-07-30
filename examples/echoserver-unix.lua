@@ -29,4 +29,7 @@ while true do
   else
     reader, err = conn:readuntil("\n")
     if err then
- 
+      print(err)
+    else
+      while true do
+        local data, err, partial = reader()

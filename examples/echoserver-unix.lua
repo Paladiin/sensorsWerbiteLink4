@@ -24,4 +24,9 @@ while true do
     print(string.format("[%d] Connected from %s:%d.", conn:fileno(), addr[1], addr[2]))
   end
   if err then
-    print(er
+    print(err)
+    os.exit()
+  else
+    reader, err = conn:readuntil("\n")
+    if err then
+ 

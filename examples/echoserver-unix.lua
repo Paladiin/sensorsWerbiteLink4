@@ -21,4 +21,7 @@ while true do
   if type(addr) == "string" then
     print(string.format("[%d] Connected from %s.", conn:fileno(), addr))
   else
-    print(string.format("[%
+    print(string.format("[%d] Connected from %s:%d.", conn:fileno(), addr[1], addr[2]))
+  end
+  if err then
+    print(er

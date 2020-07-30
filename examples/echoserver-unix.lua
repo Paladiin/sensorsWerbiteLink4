@@ -19,4 +19,6 @@ while true do
   conn, err = tcpsock:accept()
   addr, err = conn:getpeername()
   if type(addr) == "string" then
-    print(strin
+    print(string.format("[%d] Connected from %s.", conn:fileno(), addr))
+  else
+    print(string.format("[%

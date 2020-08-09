@@ -42,4 +42,8 @@ while true do
         if partial then
           data = partial
         end
-        prin
+        print(string.format("[%d] %s", conn:fileno(), data))
+      end
+    end
+  end
+end

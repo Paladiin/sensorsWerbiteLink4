@@ -13,4 +13,8 @@ tcpsock:listen(5)
 
 addr, err = tcpsock:getsockname()
 print(string.format("Listening on %s:%d...", addr[1], addr[2]))
-print(string.format("You can use this command to connect on: teln
+print(string.format("You can use this command to connect on: telnet %s %d", addr[1], addr[2]))
+print("")
+
+while true do
+  conn, err = tcpsock:accept()

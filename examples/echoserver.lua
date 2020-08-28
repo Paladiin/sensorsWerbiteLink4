@@ -18,3 +18,5 @@ print("")
 
 while true do
   conn, err = tcpsock:accept()
+  addr, err = conn:getpeername()
+  print(string.format("[%d] Connected from %s:%d.", co

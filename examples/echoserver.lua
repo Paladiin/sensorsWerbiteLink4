@@ -23,4 +23,9 @@ while true do
   if err then
     print(err)
     os.exit()
-  els
+  else
+    reader, err = conn:readuntil("\n")
+    if err then
+      print(err)
+    else
+      w

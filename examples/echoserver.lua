@@ -37,4 +37,7 @@ while true do
           break
         end
         if partial then
-  
+          data = partial
+        end
+        print(string.format("[%d] %s", conn:fileno(), data))
+ 

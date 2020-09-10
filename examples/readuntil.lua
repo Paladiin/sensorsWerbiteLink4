@@ -8,4 +8,8 @@ sock:write("Connection: Close\r\n")
 sock:write("\r\n")
 reader, err = sock:readuntil("\r\n", false)
 slices = {}
-while true d
+while true do
+  local data, err, partial = reader()
+  if not data then
+    if err then
+      print(s

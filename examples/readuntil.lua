@@ -12,4 +12,4 @@ while true do
   local data, err, partial = reader()
   if not data then
     if err then
-      print(s
+      print(string.format("failed to read the data stream: %s, rest len: %d", err, string.len(partial)))

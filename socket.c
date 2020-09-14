@@ -27,4 +27,9 @@
 #define _VERSION "0.0.1"
 
 #define TCPSOCK_TYPENAME     "TCPSOCKET*"
-#define UDPSOCK_TYPENAME     "UDPSOC
+#define UDPSOCK_TYPENAME     "UDPSOCKET*"
+
+/* Socket address */
+typedef union {
+  struct sockaddr sa;
+  struct sockaddr_

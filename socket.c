@@ -32,4 +32,8 @@
 /* Socket address */
 typedef union {
   struct sockaddr sa;
-  struct sockaddr_
+  struct sockaddr_in in;
+  struct sockaddr_un un;
+} sockaddr_t;
+
+/* Convert "sockaddr_t" to "struct sockaddr *

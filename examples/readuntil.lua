@@ -19,3 +19,6 @@ while true do
     print("read done")
     break
   end
+  print("Line:", data)
+  table.insert(slices, data)
+end

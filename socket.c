@@ -15,4 +15,7 @@
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <sys/un.h>
-#i
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <netd

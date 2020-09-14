@@ -24,4 +24,7 @@
 #include "timeout.h"
 #include "buffer.h"
 
-#define _VERSI
+#define _VERSION "0.0.1"
+
+#define TCPSOCK_TYPENAME     "TCPSOCKET*"
+#define UDPSOCK_TYPENAME     "UDPSOC

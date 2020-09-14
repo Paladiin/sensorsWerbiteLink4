@@ -18,4 +18,10 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
-#include <netd
+#include <netdb.h>
+#include <poll.h>
+#include <signal.h>
+#include "timeout.h"
+#include "buffer.h"
+
+#define _VERSI

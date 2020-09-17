@@ -44,4 +44,7 @@ struct sockobj {
     int fd;
     int sock_family;
     double sock_timeout;        /* in seconds */
-    struct buffer *buf;         /* used for buffer
+    struct buffer *buf;         /* used for buffer reading */
+};
+
+#define getsockobj(L) ((struct sockobj *)lua_touserdata(L, 1)

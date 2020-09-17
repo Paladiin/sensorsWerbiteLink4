@@ -36,4 +36,10 @@ typedef union {
   struct sockaddr_un un;
 } sockaddr_t;
 
-/* Convert "sockaddr_t" to "struct sockaddr *
+/* Convert "sockaddr_t" to "struct sockaddr *". */
+#define SAS2SA(x) (&((x)->sa))
+
+/* Socket Object */
+struct sockobj {
+    int fd;
+    int sock_famil

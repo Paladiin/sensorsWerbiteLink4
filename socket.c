@@ -47,4 +47,8 @@ struct sockobj {
     struct buffer *buf;         /* used for buffer reading */
 };
 
-#define getsockobj(L) ((struct sockobj *)lua_touserdata(L, 1)
+#define getsockobj(L) ((struct sockobj *)lua_touserdata(L, 1));
+#define CHECK_ERRNO(expected)   (errno == expected)
+
+/* Custom socket error strings */
+#defin

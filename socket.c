@@ -42,4 +42,6 @@ typedef union {
 /* Socket Object */
 struct sockobj {
     int fd;
-    int sock_famil
+    int sock_family;
+    double sock_timeout;        /* in seconds */
+    struct buffer *buf;         /* used for buffer

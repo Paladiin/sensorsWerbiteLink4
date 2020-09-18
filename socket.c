@@ -53,3 +53,7 @@ struct sockobj {
 /* Custom socket error strings */
 #define ERROR_TIMEOUT   "Operation timed out"
 #define ERROR_CLOSED    "Connection closed"
+#define ERROR_REFUSED   "Connection refused"
+
+/* Options */
+#define OPT_TCP_NODELAY   "

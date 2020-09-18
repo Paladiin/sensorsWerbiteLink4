@@ -51,4 +51,5 @@ struct sockobj {
 #define CHECK_ERRNO(expected)   (errno == expected)
 
 /* Custom socket error strings */
-#defin
+#define ERROR_TIMEOUT   "Operation timed out"
+#define ERROR_CLOSED    "Connection closed"

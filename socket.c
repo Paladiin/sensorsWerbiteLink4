@@ -56,4 +56,6 @@ struct sockobj {
 #define ERROR_REFUSED   "Connection refused"
 
 /* Options */
-#define OPT_TCP_NODELAY   "
+#define OPT_TCP_NODELAY   "tcp_nodelay"
+#define OPT_TCP_KEEPALIVE "tcp_keepalive"
+#define OPT_TCP_REUSEADDR "tcp_

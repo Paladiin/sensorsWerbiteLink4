@@ -58,4 +58,9 @@ struct sockobj {
 /* Options */
 #define OPT_TCP_NODELAY   "tcp_nodelay"
 #define OPT_TCP_KEEPALIVE "tcp_keepalive"
-#define OPT_TCP_REUSEADDR "tcp_
+#define OPT_TCP_REUSEADDR "tcp_reuseaddr"
+
+#define RECV_BUFSIZE 8192
+
+/**
+ * Function to perform the setting

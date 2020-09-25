@@ -63,4 +63,9 @@ struct sockobj {
 #define RECV_BUFSIZE 8192
 
 /**
- * Function to perform the setting
+ * Function to perform the setting of socket blocking mode.
+ */
+static void
+__setblocking(int fd, int block)
+{
+ 

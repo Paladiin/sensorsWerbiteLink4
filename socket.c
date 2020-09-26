@@ -70,4 +70,8 @@ __setblocking(int fd, int block)
 {
     int flags = fcntl(fd, F_GETFL, 0);
     if (block) {
-        flags &= (~O_NO
+        flags &= (~O_NONBLOCK);
+    } else {
+        flags |= O_NONBLOCK;
+    }
+    fcntl(fd, 

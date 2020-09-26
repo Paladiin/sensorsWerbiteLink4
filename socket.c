@@ -68,4 +68,6 @@ struct sockobj {
 static void
 __setblocking(int fd, int block)
 {
- 
+    int flags = fcntl(fd, F_GETFL, 0);
+    if (block) {
+        flags &= (~O_NO

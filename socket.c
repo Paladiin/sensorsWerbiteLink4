@@ -74,4 +74,8 @@ __setblocking(int fd, int block)
     } else {
         flags |= O_NONBLOCK;
     }
-    fcntl(fd, 
+    fcntl(fd, F_SETFL, flags);
+}
+
+/**
+ * Do a event polling on the socket, if necessary (soc

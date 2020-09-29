@@ -78,4 +78,11 @@ __setblocking(int fd, int block)
 }
 
 /**
- * Do a event polling on the socket, if necessary (soc
+ * Do a event polling on the socket, if necessary (sock_timeout > 0).
+ *
+ * Returns:
+ *  1   on timeout
+ *  -1  on error
+ *  0   success
+ */
+#define 

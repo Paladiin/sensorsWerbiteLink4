@@ -88,4 +88,6 @@ __setblocking(int fd, int block)
 #define EVENT_NONE      0
 #define EVENT_READABLE  POLLIN
 #define EVENT_WRITABLE  POLLOUT
-#define
+#define EVENT_ANY       (POLLIN | POLLOUT)
+static int
+__waitfd(struct sockobj *s, int event, s

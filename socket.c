@@ -85,4 +85,7 @@ __setblocking(int fd, int block)
  *  -1  on error
  *  0   success
  */
-#define 
+#define EVENT_NONE      0
+#define EVENT_READABLE  POLLIN
+#define EVENT_WRITABLE  POLLOUT
+#define

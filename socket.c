@@ -90,4 +90,9 @@ __setblocking(int fd, int block)
 #define EVENT_WRITABLE  POLLOUT
 #define EVENT_ANY       (POLLIN | POLLOUT)
 static int
-__waitfd(struct sockobj *s, int event, s
+__waitfd(struct sockobj *s, int event, struct timeout *tm)
+{
+    int ret;
+
+    // Nothing to do if socket is closed.
+ 

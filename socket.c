@@ -95,4 +95,9 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
     int ret;
 
     // Nothing to do if socket is closed.
- 
+    if (s->fd < 0)
+        return 0;
+
+    struct pollfd pollfd;
+    pollfd.fd = s->fd;
+  

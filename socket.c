@@ -103,4 +103,8 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
     pollfd.events = event;
 
     do {
-        // Handling this condition here simplifies t
+        // Handling this condition here simplifies the loops.
+        double left = timeout_left(tm);
+        if (left == 0.0)
+            return 1;
+     

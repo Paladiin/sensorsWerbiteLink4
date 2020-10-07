@@ -100,4 +100,7 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
 
     struct pollfd pollfd;
     pollfd.fd = s->fd;
-  
+    pollfd.events = event;
+
+    do {
+        // Handling this condition here simplifies t

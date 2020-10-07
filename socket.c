@@ -112,4 +112,9 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
     } while (ret == -1 && CHECK_ERRNO(EINTR));
 
     if (ret < 0) {
-        return
+        return -1;
+    } else if (ret == 0) {
+        return 1;
+    } else {
+        return 0;
+ 

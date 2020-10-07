@@ -107,4 +107,5 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
         double left = timeout_left(tm);
         if (left == 0.0)
             return 1;
-     
+        int timeout = (int)(left * 1e3);
+        ret = poll(&pollfd, 1, timeout >= 0 ? timeout : -1);

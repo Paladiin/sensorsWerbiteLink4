@@ -121,4 +121,10 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
 }
 
 int
-__select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds
+__select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
+         struct timeout *tm)
+{
+    int ret;
+    do {
+        struct timeval tv = { 0, 0 };
+     

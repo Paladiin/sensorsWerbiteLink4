@@ -117,4 +117,8 @@ __waitfd(struct sockobj *s, int event, struct timeout *tm)
         return 1;
     } else {
         return 0;
- 
+    }
+}
+
+int
+__select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds

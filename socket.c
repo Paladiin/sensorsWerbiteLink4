@@ -134,4 +134,9 @@ __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
         }
 
         ret = select(nfds, readfds, writefds, errorfds, (t >= 0) ? &tv : NULL);
-    } while (ret < 0 && errno == 
+    } while (ret < 0 && errno == EINTR);
+    return ret;
+}
+
+/**
+ * Get the address length according to the socket 

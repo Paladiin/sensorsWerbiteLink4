@@ -130,4 +130,7 @@ __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
         double t = timeout_left(tm);
         if (t >= 0) {
             tv.tv_sec = (int)t;
- 
+            tv.tv_usec = (int)((t - tv.tv_sec) * 1.0e6);
+        }
+
+        ret = select(n

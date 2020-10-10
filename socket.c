@@ -133,4 +133,5 @@ __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
             tv.tv_usec = (int)((t - tv.tv_sec) * 1.0e6);
         }
 
-        ret = select(n
+        ret = select(nfds, readfds, writefds, errorfds, (t >= 0) ? &tv : NULL);
+    } while (ret < 0 && errno == 

@@ -127,4 +127,7 @@ __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
     int ret;
     do {
         struct timeval tv = { 0, 0 };
-     
+        double t = timeout_left(tm);
+        if (t >= 0) {
+            tv.tv_sec = (int)t;
+ 

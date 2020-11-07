@@ -144,4 +144,8 @@ __select(int nfds, fd_set * readfds, fd_set * writefds, fd_set * errorfds,
  * len_ret.
  */
 static int
-__getsockaddrlen(struct sockobj *s, socklen
+__getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
+{
+    switch (s->sock_family) {
+    case AF_UNIX:
+        *len_ret 

@@ -148,4 +148,7 @@ __getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
 {
     switch (s->sock_family) {
     case AF_UNIX:
+        *len_ret = sizeof(struct sockaddr_un);
+        return 1;
+    case AF_INET:
         *len_ret 

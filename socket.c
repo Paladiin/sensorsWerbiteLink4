@@ -154,4 +154,12 @@ __getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
         *len_ret = sizeof(struct sockaddr_in);
         return 1;
     case AF_INET6:
-        *len_ret = sizeof(s
+        *len_ret = sizeof(struct sockaddr_in6);
+        return 1;
+    default:
+        return 0;
+    }
+}
+
+/* 
+ * Convert a strin

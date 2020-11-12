@@ -162,4 +162,7 @@ __getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
 }
 
 /* 
- * Convert a strin
+ * Convert a string specifying a host name or one of a few symbolic names to a
+ * numeric IP address.
+ */
+st

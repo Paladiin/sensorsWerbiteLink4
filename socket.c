@@ -165,4 +165,5 @@ __getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
  * Convert a string specifying a host name or one of a few symbolic names to a
  * numeric IP address.
  */
-st
+static int
+__sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, 

@@ -166,4 +166,8 @@ __getsockaddrlen(struct sockobj *s, socklen_t * len_ret)
  * numeric IP address.
  */
 static int
-__sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, 
+__sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, size_t addr_ret_size, int af)
+{
+    struct addrinfo hints, *res;
+    int err;
+    int d1, d2, d

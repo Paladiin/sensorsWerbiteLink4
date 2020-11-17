@@ -170,4 +170,8 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
 {
     struct addrinfo hints, *res;
     int err;
-    int d1, d2, d
+    int d1, d2, d3, d4;
+    char ch;
+    memset((void *)addr_ret, 0, addr_ret_size);
+    
+    if (sscanf(na

@@ -174,4 +174,6 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
     char ch;
     memset((void *)addr_ret, 0, addr_ret_size);
     
-    if (sscanf(na
+    if (sscanf(name, "%d.%d.%d.%d%c", &d1, &d2, &d3, &d4, &ch) == 4
+        && 0 <= d1 && d1 <= 255
+       

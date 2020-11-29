@@ -182,4 +182,9 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
         struct sockaddr_in *sin;
         sin = (struct sockaddr_in *)addr_ret;
         sin->sin_addr.s_addr = htonl(((long)d1 << 24) | ((long)d2 << 16) | ((long)d3 << 8) | ((long)d4 << 0));
-     
+        sin->sin_family = AF_INET;
+        return 0;
+    }
+
+    memset(&hints, 0, sizeof(hints));
+    hin

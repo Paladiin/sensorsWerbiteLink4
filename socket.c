@@ -187,4 +187,6 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
     }
 
     memset(&hints, 0, sizeof(hints));
-    hin
+    hints.ai_family = af;
+    err = getaddrinfo(name, NULL, &hints, &res);
+    if

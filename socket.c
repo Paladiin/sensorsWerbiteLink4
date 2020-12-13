@@ -194,4 +194,6 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
         lua_pushstring(L, gai_strerror(errno));
         return -1;
     }
- 
+    if (res->ai_addrlen < addr_ret_size)
+        addr_ret_size = res->ai_addrlen;
+    memcpy

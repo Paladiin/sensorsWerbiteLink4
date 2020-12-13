@@ -189,4 +189,9 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = af;
     err = getaddrinfo(name, NULL, &hints, &res);
-    if
+    if (err) {
+        lua_pushnil(L);
+        lua_pushstring(L, gai_strerror(errno));
+        return -1;
+    }
+ 

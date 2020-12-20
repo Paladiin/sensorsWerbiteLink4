@@ -196,4 +196,10 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
     }
     if (res->ai_addrlen < addr_ret_size)
         addr_ret_size = res->ai_addrlen;
-    memcpy
+    memcpy((char *)addr_ret, res->ai_addr, addr_ret_size);
+    freeaddrinfo(res);
+    return 0;
+}
+
+/**
+ * 

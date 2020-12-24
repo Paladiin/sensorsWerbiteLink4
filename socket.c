@@ -202,4 +202,8 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
 }
 
 /**
- * 
+ * Parse socket address arguments.
+ *
+ * Socket addresses are represented as follows:
+
+ *  - A 

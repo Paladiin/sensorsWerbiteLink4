@@ -207,4 +207,5 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  * Socket addresses are represented as follows:
 
  *  - A single string is used for the AF_UNIX address family.
- *  - Two arguments (host, port) is used for
+ *  - Two arguments (host, port) is used for the AF_INET address family,
+ *    where host is a string representing e

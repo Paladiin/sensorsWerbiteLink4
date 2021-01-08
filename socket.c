@@ -209,4 +209,7 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  *  - A single string is used for the AF_UNIX address family.
  *  - Two arguments (host, port) is used for the AF_INET address family,
  *    where host is a string representing either a hostname in Internet Domain
- *    Notation like 'www.example.com' or an IPv4 address like '8.
+ *    Notation like 'www.example.com' or an IPv4 address like '8.8.8.8', and port
+ *    is an number.
+
+ * If you use a hostname in the host portio

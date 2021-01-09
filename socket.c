@@ -212,4 +212,5 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  *    Notation like 'www.example.com' or an IPv4 address like '8.8.8.8', and port
  *    is an number.
 
- * If you use a hostname in the host portio
+ * If you use a hostname in the host portion of IPv4/IPv6 socket address, the
+ * program may show a nondeterministic behavior, as we use t

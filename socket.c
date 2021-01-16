@@ -213,4 +213,5 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  *    is an number.
 
  * If you use a hostname in the host portion of IPv4/IPv6 socket address, the
- * program may show a nondeterministic behavior, as we use t
+ * program may show a nondeterministic behavior, as we use the first address
+ * returned from the DNS resolution. The socket address will 

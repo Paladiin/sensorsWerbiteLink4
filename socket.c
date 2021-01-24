@@ -224,4 +224,5 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  * Returns 0 on success, -1 on failure.
  */
 static int
-__sockobj_getaddrf
+__sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr_ret,
+                     so

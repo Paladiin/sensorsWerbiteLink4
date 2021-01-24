@@ -216,4 +216,7 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  * program may show a nondeterministic behavior, as we use the first address
  * returned from the DNS resolution. The socket address will be resolved
  * differently into an actual IPv4/v6 address, depending on the results from DNS
- * resolution and/or the host configuration. For deterministic behavior use
+ * resolution and/or the host configuration. For deterministic behavior use a
+ * numeric address in host portion.
+ *
+ * This method assumed that address arguments start after offs

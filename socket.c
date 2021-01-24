@@ -219,4 +219,9 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  * resolution and/or the host configuration. For deterministic behavior use a
  * numeric address in host portion.
  *
- * This method assumed that address arguments start after offs
+ * This method assumed that address arguments start after offset index.
+ *
+ * Returns 0 on success, -1 on failure.
+ */
+static int
+__sockobj_getaddrf

@@ -225,4 +225,8 @@ __sockobj_setipaddr(lua_State *L, const char *name, struct sockaddr *addr_ret, s
  */
 static int
 __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr_ret,
-                     so
+                     socklen_t * len_ret, int offset)
+{
+    int n;
+    n = lua_gettop(L);
+    if (n != 1 + offset && n != 2 + offse

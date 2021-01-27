@@ -236,4 +236,7 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         return -1;
     }
 
-    if (
+    if (n == 2 + offset) {
+        s->sock_family = AF_INET;
+    } else if (n == 1 + offset) {
+     

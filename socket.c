@@ -229,4 +229,7 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
 {
     int n;
     n = lua_gettop(L);
-    if (n != 1 + offset && n != 2 + offse
+    if (n != 1 + offset && n != 2 + offset) {
+        lua_pushnil(L);
+        lua_pushfstring(L, "expecting %d or %d arguments"
+        " (includi

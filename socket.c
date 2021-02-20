@@ -242,4 +242,5 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         s->sock_family = AF_UNIX;
     }
     if (s->sock_family == AF_INET) {
-        s
+        struct sockaddr_in *addr = (struct sockaddr_in *)addr_ret;
+        const c

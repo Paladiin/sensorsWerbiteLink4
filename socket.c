@@ -245,4 +245,6 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         struct sockaddr_in *addr = (struct sockaddr_in *)addr_ret;
         const char *host;
         int port;
-        host = luaL_checkstring(L, 1 + offset
+        host = luaL_checkstring(L, 1 + offset);
+        port = luaL_checknumber(L, 2 + offset);
+        if (__sockobj_setipaddr(L, host, (struct 

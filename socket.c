@@ -254,4 +254,5 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         addr->sin_port = htons(port);
         *len_ret = sizeof(*addr);
     } else if (s->sock_family == AF_UNIX) {
-        struct socka
+        struct sockaddr_un *addr = (struct sockaddr_un *)addr_ret;
+        const char *path = luaL_checkstring(L, 1 + of

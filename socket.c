@@ -257,4 +257,7 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         struct sockaddr_un *addr = (struct sockaddr_un *)addr_ret;
         const char *path = luaL_checkstring(L, 1 + offset);
         addr->sun_family = AF_UNIX;
-        strncpy(addr->sun_path, path, sizeof(addr->s
+        strncpy(addr->sun_path, path, sizeof(addr->sun_path) - 1);
+        *len_ret = sizeof(*addr);
+    } else {
+        assert(0);

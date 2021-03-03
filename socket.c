@@ -252,4 +252,6 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         }
         addr->sin_family = AF_INET;
         addr->sin_port = htons(port);
-        *le
+        *len_ret = sizeof(*addr);
+    } else if (s->sock_family == AF_UNIX) {
+        struct socka

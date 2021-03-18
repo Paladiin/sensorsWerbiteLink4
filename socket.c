@@ -268,4 +268,5 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
 /**
  * Create a table, push address info into it.
  *
- * The fa
+ * The family field os the socket object is inspected to determine what kind of
+ *

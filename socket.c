@@ -261,3 +261,11 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
         *len_ret = sizeof(*addr);
     } else {
         assert(0);
+    }
+    return 0;
+}
+
+/**
+ * Create a table, push address info into it.
+ *
+ * The fa

@@ -272,4 +272,8 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
  * address it really is.
  *
  * In case of success, a table associated with address info pushed on the stack;
- * In case of error, a nil value with a string describing the erro
+ * In case of error, a nil value with a string describing the error pushed on
+ * the stack.
+ */
+static int
+__sockobj_makeaddr(lua_State * L, struct sockobj *s,

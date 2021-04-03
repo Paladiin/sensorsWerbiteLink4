@@ -276,4 +276,9 @@ __sockobj_getaddrfromarg(lua_State * L, struct sockobj *s, struct sockaddr *addr
  * the stack.
  */
 static int
-__sockobj_makeaddr(lua_State * L, struct sockobj *s,
+__sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
+               socklen_t addrlen)
+{
+    lua_newtable(L);
+
+    switch 

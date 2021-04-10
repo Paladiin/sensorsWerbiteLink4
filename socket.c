@@ -281,4 +281,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
 {
     lua_newtable(L);
 
-    switch 
+    switch (addr->sa_family) {
+    case AF_INET:
+        {
+            struct sockaddr_in *a

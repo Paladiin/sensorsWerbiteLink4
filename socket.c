@@ -284,4 +284,6 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
     switch (addr->sa_family) {
     case AF_INET:
         {
-            struct sockaddr_in *a
+            struct sockaddr_in *a = (struct sockaddr_in *)addr;
+            char buf[NI_MAXHOST];
+            int e

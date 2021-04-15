@@ -290,4 +290,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
                                   NI_NUMERICHOST);
             if (err) {
                 err = errno;
-                lua_pushni
+                lua_pushnil(L);
+                lua_pushstring(L, gai_strerror(errno));
+                return -1;
+  

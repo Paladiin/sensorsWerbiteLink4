@@ -287,4 +287,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             struct sockaddr_in *a = (struct sockaddr_in *)addr;
             char buf[NI_MAXHOST];
             int err = getnameinfo(addr, addrlen, buf, sizeof(buf), NULL, 0,
-                       
+                                  NI_NUMERICHOST);
+            if (err) {
+                err = errno;
+                lua_pushni

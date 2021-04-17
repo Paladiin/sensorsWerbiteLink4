@@ -293,4 +293,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
                 lua_pushnil(L);
                 lua_pushstring(L, gai_strerror(errno));
                 return -1;
-  
+            }
+            lua_pushnumber(L, 1);
+            lua_pushstring(L, buf);
+      

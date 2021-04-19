@@ -298,4 +298,8 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             lua_pushstring(L, buf);
             lua_settable(L, -3);
             lua_pushnumber(L, 2);
-            lua_pushnumber(L, ntohs(a-
+            lua_pushnumber(L, ntohs(a->sin_port));
+            lua_settable(L, -3);
+            return 0;
+        }
+    case AF

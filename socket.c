@@ -302,4 +302,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             lua_settable(L, -3);
             return 0;
         }
-    case AF
+    case AF_UNIX:
+        {
+            struct sockaddr_un *a = (struct sockaddr_un *)addr;
+#

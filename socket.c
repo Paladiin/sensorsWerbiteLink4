@@ -305,4 +305,6 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
     case AF_UNIX:
         {
             struct sockaddr_un *a = (struct sockaddr_un *)addr;
-#
+#ifdef linux
+            if (a->sun_path[0] == 0) { /* Linux abstract namespace */
+            

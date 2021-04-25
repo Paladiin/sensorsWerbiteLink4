@@ -307,4 +307,5 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             struct sockaddr_un *a = (struct sockaddr_un *)addr;
 #ifdef linux
             if (a->sun_path[0] == 0) { /* Linux abstract namespace */
-            
+                addrlen -= offset(struct sockaddr_un, sun_path);
+                lua_pushlstring(

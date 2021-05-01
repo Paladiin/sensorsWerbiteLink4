@@ -312,4 +312,6 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             } else
 #endif
             {
-                
+                /* regular NULL-terminated string */
+                lua_pushstring(L, a->sun_path);
+            

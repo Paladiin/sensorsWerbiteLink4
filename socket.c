@@ -318,4 +318,6 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
             return 0;
         }
     default:
-        /* If we don't know
+        /* If we don't know the address family, return it as an {int, bytes}
+         * table. */
+        lua_pushnumb

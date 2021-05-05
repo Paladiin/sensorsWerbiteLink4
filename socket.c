@@ -325,3 +325,10 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
         lua_settable(L, -3);
         lua_pushnumber(L, 2);
         lua_pushstring(L, addr->sa_data);
+        lua_settable(L, -3);
+        return 0;
+    }
+}
+
+/**
+ * Generic socket object creati

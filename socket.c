@@ -331,4 +331,9 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
 }
 
 /**
- * Generic socket object creati
+ * Generic socket object creation.
+ */
+struct sockobj *
+__sockobj_create(lua_State *L, const char *tname)
+{
+    struct sockobj *s 

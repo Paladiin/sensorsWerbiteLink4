@@ -336,4 +336,7 @@ __sockobj_makeaddr(lua_State * L, struct sockobj *s, struct sockaddr *addr,
 struct sockobj *
 __sockobj_create(lua_State *L, const char *tname)
 {
-    struct sockobj *s 
+    struct sockobj *s =
+        (struct sockobj *)lua_newuserdata(L, sizeof(struct sockobj));
+    if (!s) {
+        ret

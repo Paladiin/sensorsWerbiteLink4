@@ -339,4 +339,9 @@ __sockobj_create(lua_State *L, const char *tname)
     struct sockobj *s =
         (struct sockobj *)lua_newuserdata(L, sizeof(struct sockobj));
     if (!s) {
-        ret
+        return NULL;
+    }
+    s->fd = -1;
+    s->sock_timeout = -1;
+    s->sock_family = 0;
+    s->buf = 

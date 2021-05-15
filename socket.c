@@ -352,4 +352,7 @@ __sockobj_create(lua_State *L, const char *tname)
 /**
  * Generic socket fd creation.
  */
-static 
+static int
+__sockobj_createsocket(lua_State *L, struct sockobj *s, int type)
+{
+    int fd;

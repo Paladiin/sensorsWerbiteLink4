@@ -344,4 +344,12 @@ __sockobj_create(lua_State *L, const char *tname)
     s->fd = -1;
     s->sock_timeout = -1;
     s->sock_family = 0;
-    s->buf = 
+    s->buf = NULL;
+    luaL_setmetatable(L, tname);
+    return s;
+}
+
+/**
+ * Generic socket fd creation.
+ */
+static 

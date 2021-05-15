@@ -356,3 +356,6 @@ static int
 __sockobj_createsocket(lua_State *L, struct sockobj *s, int type)
 {
     int fd;
+    assert(s->fd == -1);
+
+    if ((fd = socket(s->sock_family, type, 0)) == -1

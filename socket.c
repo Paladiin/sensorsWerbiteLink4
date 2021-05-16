@@ -374,4 +374,8 @@ __sockobj_createsocket(lua_State *L, struct sockobj *s, int type)
 /**
  * Close associated socket and buffers.
  */
-static i
+static int
+__sockobj_close(lua_State *L, struct sockobj *s)
+{
+    if (s->fd != -1) {
+        

@@ -360,4 +360,10 @@ __sockobj_createsocket(lua_State *L, struct sockobj *s, int type)
 
     if ((fd = socket(s->sock_family, type, 0)) == -1) {
         lua_pushnil(L);
-        lua_pushfstring(L, "failed to create socket: %s", strerror(e
+        lua_pushfstring(L, "failed to create socket: %s", strerror(errno));
+        return -1;
+    }
+    s->fd = fd;
+
+    // 100% non-blocking
+    __setblockin

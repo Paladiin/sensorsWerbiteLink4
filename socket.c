@@ -366,4 +366,12 @@ __sockobj_createsocket(lua_State *L, struct sockobj *s, int type)
     s->fd = fd;
 
     // 100% non-blocking
-    __setblockin
+    __setblocking(s->fd, 0);
+
+    return 0;
+}
+
+/**
+ * Close associated socket and buffers.
+ */
+static i

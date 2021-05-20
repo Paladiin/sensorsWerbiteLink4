@@ -378,4 +378,6 @@ static int
 __sockobj_close(lua_State *L, struct sockobj *s)
 {
     if (s->fd != -1) {
-        
+        if (close(s->fd) != 0) {
+            lua_pushnil(L);
+            lua_pushstrin

@@ -385,4 +385,12 @@ __sockobj_close(lua_State *L, struct sockobj *s)
         }
         s->fd = -1;
     }
-    if
+    if (s->buf) {
+        buffer_delete(s->buf);
+        s->buf = NULL;
+    }
+    return 0;
+}
+
+/**
+ 

@@ -393,4 +393,7 @@ __sockobj_close(lua_State *L, struct sockobj *s)
 }
 
 /**
- 
+ * Generic socket connection.
+ */
+static int
+__sockobj_connect(lua_State *L, s

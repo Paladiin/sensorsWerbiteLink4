@@ -399,4 +399,6 @@ static int
 __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, socklen_t len)
 {
     int ret;
-    char *errst
+    char *errstr = NULL;
+    struct timeout tm;
+    timeout_init(&tm, s->soc

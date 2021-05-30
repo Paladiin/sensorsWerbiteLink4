@@ -407,4 +407,5 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
     errno = 0;
     ret = connect(s->fd, addr, len);
 
-   
+    if (CHECK_ERRNO(EINPROGRESS)) {
+        /* Connecting in progress with timeout, wait until we have the result 

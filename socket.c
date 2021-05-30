@@ -401,4 +401,10 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
     int ret;
     char *errstr = NULL;
     struct timeout tm;
-    timeout_init(&tm, s->soc
+    timeout_init(&tm, s->sock_timeout);
+    assert(s->fd > 0);
+
+    errno = 0;
+    ret = connect(s->fd, addr, len);
+
+   

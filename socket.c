@@ -411,4 +411,7 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
         /* Connecting in progress with timeout, wait until we have the result of
          * the connection attempt or timeout.
          */
-        int timeout = __wait
+        int timeout = __waitfd(s, EVENT_WRITABLE, &tm);
+        if (timeout == 1) {
+            errstr = ERROR_TIMEOUT;
+       

@@ -414,4 +414,6 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
         int timeout = __waitfd(s, EVENT_WRITABLE, &tm);
         if (timeout == 1) {
             errstr = ERROR_TIMEOUT;
-       
+            goto err;
+        } else if (timeout == 0) {
+            // In case of EINPROGRESS,

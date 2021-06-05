@@ -419,4 +419,5 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
             // In case of EINPROGRESS, use getsockopt(SO_ERROR) to get the real
             // error, when the connection attempt finished.
             socklen_t ret_size = sizeof(ret);
-            getsocko
+            getsockopt(s->fd, SOL_SOCKET, SO_ERROR, &ret, &ret_size);
+            if (ret == EISCON

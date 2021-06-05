@@ -420,4 +420,7 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
             // error, when the connection attempt finished.
             socklen_t ret_size = sizeof(ret);
             getsockopt(s->fd, SOL_SOCKET, SO_ERROR, &ret, &ret_size);
-            if (ret == EISCON
+            if (ret == EISCONN) {
+                errno = 0;
+            } else {
+                errno = 

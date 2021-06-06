@@ -441,4 +441,9 @@ err:
     assert(errstr);
     __sockobj_close(L, s);
     lua_pushnil(L);
-  
+    lua_pushstring(L, errstr);
+    return -1;
+}
+
+static int
+__sockobj_send(lua_

@@ -446,4 +446,4 @@ err:
 }
 
 static int
-__sockobj_send(lua_
+__sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent

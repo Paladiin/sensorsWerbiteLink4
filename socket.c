@@ -423,4 +423,9 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
             if (ret == EISCONN) {
                 errno = 0;
             } else {
-                errno = 
+                errno = ret;
+            }
+        } else {
+            errstr = strerror(errno);
+            goto err;
+        }

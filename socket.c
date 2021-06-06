@@ -435,4 +435,10 @@ __sockobj_connect(lua_State *L, struct sockobj *s, struct sockaddr *addr, sockle
         errstr = strerror(errno);
         goto err;
     }
-    return
+    return 0;
+
+err:
+    assert(errstr);
+    __sockobj_close(L, s);
+    lua_pushnil(L);
+  

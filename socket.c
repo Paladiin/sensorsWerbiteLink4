@@ -446,4 +446,7 @@ err:
 }
 
 static int
-__sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent
+__sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent, struct timeout *tm) {
+    char *errstr;
+    if (s->fd == -1) {
+        errstr = ERROR_CLOSED;

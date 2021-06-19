@@ -459,4 +459,7 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
             errstr = strerror(errno);
             goto err;
         } else if (timeout == 1) {
-            errstr = ERR
+            errstr = ERROR_TIMEOUT;
+            goto err;
+        } else {
+            int n = send(s->fd, buf, 

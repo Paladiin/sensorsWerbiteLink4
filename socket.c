@@ -465,4 +465,7 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
             int n = send(s->fd, buf, len, 0);
             if (n < 0) {
                 switch (errno) {
-               
+                case EINTR:
+                case EAGAIN:
+                    continue;
+                case EPIPE

@@ -468,4 +468,6 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
                 case EINTR:
                 case EAGAIN:
                     continue;
-                case EPIPE
+                case EPIPE:
+                    // EPIPE means the connection was closed.
+                    errstr

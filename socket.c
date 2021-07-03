@@ -476,4 +476,8 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
                     errstr = strerror(errno);
                     goto err;
                 }
-        
+            } else {
+                *sent = n;
+                return 0;
+            }
+      

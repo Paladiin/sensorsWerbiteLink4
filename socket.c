@@ -473,4 +473,7 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
                     errstr = ERROR_CLOSED;
                     goto err;
                 default:
-             
+                    errstr = strerror(errno);
+                    goto err;
+                }
+        

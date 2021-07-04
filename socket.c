@@ -480,4 +480,11 @@ __sockobj_send(lua_State *L, struct sockobj *s, const char *buf, size_t len, siz
                 *sent = n;
                 return 0;
             }
-      
+        }
+    }
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    ret

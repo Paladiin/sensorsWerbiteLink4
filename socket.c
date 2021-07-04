@@ -487,4 +487,8 @@ err:
     assert(errstr);
     lua_pushnil(L);
     lua_pushstring(L, errstr);
-    ret
+    return -1;
+}
+
+static int
+__sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf,

@@ -491,4 +491,4 @@ err:
 }
 
 static int
-__sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf,
+__sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent, struct sockaddr *addr, socklen_t addrlen, struct t

@@ -491,4 +491,8 @@ err:
 }
 
 static int
-__sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent, struct sockaddr *addr, socklen_t addrlen, struct t
+__sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, size_t *sent, struct sockaddr *addr, socklen_t addrlen, struct timeout *tm) {
+    char *errstr;
+    if (s->fd == -1) {
+        errstr = ERROR_CLOSED;
+        go

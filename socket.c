@@ -495,4 +495,9 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
     char *errstr;
     if (s->fd == -1) {
         errstr = ERROR_CLOSED;
-        go
+        goto err;
+    }
+
+    while (1) {
+        int timeout = __waitfd(s, EVENT_WRITABLE, tm);
+  

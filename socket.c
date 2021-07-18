@@ -503,4 +503,7 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
         if (timeout == -1) {
             errstr = strerror(errno);
             goto err;
-        } else if 
+        } else if (timeout == 1) {
+            errstr = ERROR_TIMEOUT;
+            goto err;
+        } e

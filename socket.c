@@ -509,3 +509,7 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
         } else {
             int n = sendto(s->fd, buf, len, 0, addr, addrlen);
             if (n < 0) {
+                switch (errno) {
+                case EINTR:
+                case EAGAIN:
+            

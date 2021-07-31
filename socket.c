@@ -516,4 +516,7 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
                 case EPIPE:
                     // EPIPE means the connection was closed.
                     errstr = ERROR_CLOSED;
-                    goto er
+                    goto err;
+                default:
+                    errstr = strerror(errno);
+                   

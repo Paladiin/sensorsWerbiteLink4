@@ -512,4 +512,6 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
                 switch (errno) {
                 case EINTR:
                 case EAGAIN:
-            
+                    continue;
+                case EPIPE:
+                    // EPIPE means the connection

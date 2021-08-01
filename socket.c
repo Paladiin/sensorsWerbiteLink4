@@ -519,4 +519,7 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
                     goto err;
                 default:
                     errstr = strerror(errno);
-                   
+                    goto err;
+                }
+            } else {
+                *sent

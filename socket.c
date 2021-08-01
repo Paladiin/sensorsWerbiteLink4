@@ -522,4 +522,12 @@ __sockobj_sendto(lua_State *L, struct sockobj *s, const char *buf, size_t len, s
                     goto err;
                 }
             } else {
-                *sent
+                *sent = n;
+                return 0;
+            }
+        }
+    }
+
+err:
+    assert(errstr);
+    lua_pushni

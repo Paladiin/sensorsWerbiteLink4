@@ -536,4 +536,6 @@ err:
 }
 
 static int
-__sockobj_write(lua_Sta
+__sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
+    char *errstr;
+    size_t to

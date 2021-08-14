@@ -547,4 +547,5 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
     struct timeout tm;
     timeout_init(&tm, s->sock_timeout);
     while (1) {
-      
+        int timeout = __waitfd(s, EVENT_WRITABLE, &tm);
+        if (timeout == -1) 

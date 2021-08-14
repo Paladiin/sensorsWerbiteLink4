@@ -541,4 +541,10 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
     size_t total_sent = 0;
     if (s->fd == -1) {
         errstr = ERROR_CLOSED;
-        goto
+        goto err;
+    }
+
+    struct timeout tm;
+    timeout_init(&tm, s->sock_timeout);
+    while (1) {
+      

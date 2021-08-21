@@ -551,4 +551,8 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
         if (timeout == -1) {
             errstr = strerror(errno);
             goto err;
-        } else if (timeou
+        } else if (timeout == 1) {
+            errstr = ERROR_TIMEOUT;
+            goto err;
+        } else {
+            in

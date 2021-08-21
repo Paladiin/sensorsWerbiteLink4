@@ -555,4 +555,6 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
             errstr = ERROR_TIMEOUT;
             goto err;
         } else {
-            in
+            int n = send(s->fd, buf + total_sent, len - total_sent, 0);
+            if (n < 0) {
+                switc

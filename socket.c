@@ -560,4 +560,6 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
                 switch (errno) {
                 case EINTR:
                 case EAGAIN:
-                 
+                    continue;
+                case EPIPE:
+                    // EPIPE means the connecti

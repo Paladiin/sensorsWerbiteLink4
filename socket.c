@@ -565,4 +565,7 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
                     // EPIPE means the connection was closed.
                     errstr = ERROR_CLOSED;
                     goto err;
-           
+                default:
+                    errstr = strerror(errno);
+                    goto err;
+      

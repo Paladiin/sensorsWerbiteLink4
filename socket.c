@@ -568,4 +568,7 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
                 default:
                     errstr = strerror(errno);
                     goto err;
-      
+                }
+            } else {
+                total_sent += n;
+        

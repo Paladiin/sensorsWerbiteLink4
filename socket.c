@@ -571,4 +571,6 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
                 }
             } else {
                 total_sent += n;
-        
+                if (len - total_sent <= 0) {
+                    break;
+              

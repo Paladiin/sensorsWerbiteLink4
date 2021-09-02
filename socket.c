@@ -585,4 +585,9 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
 err:
     assert(errstr);
     lua_pushnil(L);
-    lu
+    lua_pushstring(L, errstr);
+    return -1;
+}
+
+static int
+__sockobj_recv(lua_State *

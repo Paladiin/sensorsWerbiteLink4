@@ -579,4 +579,10 @@ __sockobj_write(lua_State *L, struct sockobj *s, const char *buf, size_t len) {
     }
 
     assert(total_sent == len);
-    lua_pushinteger(L,
+    lua_pushinteger(L, total_sent);
+    return 0;
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lu

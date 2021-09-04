@@ -590,4 +590,6 @@ err:
 }
 
 static int
-__sockobj_recv(lua_State *
+__sockobj_recv(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, size_t *received, struct timeout *tm)
+{
+    

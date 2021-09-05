@@ -600,4 +600,7 @@ __sockobj_recv(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, si
     }
 
     while (1) {
-        int timeout = __waitfd(s, EVENT_READABLE, tm)
+        int timeout = __waitfd(s, EVENT_READABLE, tm);
+        if (timeout == -1) {
+            errstr = strerror(errno);
+          

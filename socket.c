@@ -617,4 +617,7 @@ __sockobj_recv(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, si
                 goto err;
             } else {
                 switch (errno) {
-       
+                case EINTR:
+                case EAGAIN:
+                    // do nothing, continue
+     

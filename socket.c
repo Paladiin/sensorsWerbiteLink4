@@ -625,4 +625,12 @@ __sockobj_recv(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, si
                     errstr = strerror(errno);
                     goto err;
                 }
-            
+            }
+        }
+    }
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    return -1;

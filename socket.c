@@ -622,4 +622,7 @@ __sockobj_recv(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, si
                     // do nothing, continue
                     continue;
                 default:
-                    errstr 
+                    errstr = strerror(errno);
+                    goto err;
+                }
+            

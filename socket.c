@@ -634,3 +634,7 @@ err:
     lua_pushnil(L);
     lua_pushstring(L, errstr);
     return -1;
+}
+
+static int
+__sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, s

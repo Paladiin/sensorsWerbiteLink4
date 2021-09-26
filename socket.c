@@ -637,4 +637,9 @@ err:
 }
 
 static int
-__sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, size_t *received, struct sockaddr *addr, socklen_t *addrlen, struct 
+__sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, size_t *received, struct sockaddr *addr, socklen_t *addrlen, struct timeout *tm)
+{
+    char *errstr = NULL;
+
+    if (s->fd == -1) {
+        errstr = ERROR_CLOSED

@@ -637,4 +637,4 @@ err:
 }
 
 static int
-__sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, s
+__sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize, size_t *received, struct sockaddr *addr, socklen_t *addrlen, struct 

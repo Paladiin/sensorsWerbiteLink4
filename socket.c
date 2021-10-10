@@ -653,4 +653,6 @@ __sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize
             goto err;
         } else if (timeout == 1) {
             errstr = ERROR_TIMEOUT;
-    
+            goto err;
+        } else {
+            int bytes_read = recvfrom(s->fd, 

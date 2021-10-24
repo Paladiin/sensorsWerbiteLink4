@@ -659,4 +659,6 @@ __sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize
             if (bytes_read > 0) {
                 *received = bytes_read;
                 return 0;
-            } else if 
+            } else if (bytes_read == 0) {
+                errstr = ERROR_CLOSED;
+                got

@@ -661,4 +661,8 @@ __sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize
                 return 0;
             } else if (bytes_read == 0) {
                 errstr = ERROR_CLOSED;
-                got
+                goto err;
+            } else {
+                switch (errno) {
+                case EINTR:
+        

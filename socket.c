@@ -670,4 +670,12 @@ __sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize
                     continue;
                 default:
                     errstr = strerror(errno);
-                    go
+                    goto err;
+                }
+            }
+        }
+    }
+
+err:
+    assert(errstr);
+    lua_pus

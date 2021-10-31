@@ -688,4 +688,7 @@ err:
 static int
 socket_tcp(lua_State * L)
 {
-    struct sockobj *s = __sockobj_c
+    struct sockobj *s = __sockobj_create(L, TCPSOCK_TYPENAME);
+    if (!s) {
+        return luaL_error(L, "out of memory");
+   

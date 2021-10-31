@@ -678,4 +678,9 @@ __sockobj_recvfrom(lua_State *L, struct sockobj *s, char *buf, size_t buffersize
 
 err:
     assert(errstr);
-    lua_pus
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    return -1;
+}
+/**
+ * tcpsock, err = socket.tcp(

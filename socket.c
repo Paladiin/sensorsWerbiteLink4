@@ -683,4 +683,9 @@ err:
     return -1;
 }
 /**
- * tcpsock, err = socket.tcp(
+ * tcpsock, err = socket.tcp()
+ */
+static int
+socket_tcp(lua_State * L)
+{
+    struct sockobj *s = __sockobj_c

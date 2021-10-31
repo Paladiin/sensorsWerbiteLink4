@@ -691,4 +691,12 @@ socket_tcp(lua_State * L)
     struct sockobj *s = __sockobj_create(L, TCPSOCK_TYPENAME);
     if (!s) {
         return luaL_error(L, "out of memory");
-   
+    }
+    return 1;
+}
+
+/**
+ * udpsock, err = socket.udp()
+ */
+static int
+socket_udp(lua_State

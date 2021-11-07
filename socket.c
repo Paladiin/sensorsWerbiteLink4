@@ -703,4 +703,10 @@ socket_udp(lua_State * L)
 {
     struct sockobj *s = __sockobj_create(L, UDPSOCK_TYPENAME);
     if (!s) {
-     
+        return luaL_error(L, "out of memory");
+    }
+    return 1;
+}
+
+static void
+__collect_f

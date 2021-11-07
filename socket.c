@@ -699,4 +699,8 @@ socket_tcp(lua_State * L)
  * udpsock, err = socket.udp()
  */
 static int
-socket_udp(lua_State
+socket_udp(lua_State * L)
+{
+    struct sockobj *s = __sockobj_create(L, UDPSOCK_TYPENAME);
+    if (!s) {
+     

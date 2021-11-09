@@ -709,4 +709,7 @@ socket_udp(lua_State * L)
 }
 
 static void
-__collect_f
+__collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
+{
+    if (lua_isnil(L, tab))
+     

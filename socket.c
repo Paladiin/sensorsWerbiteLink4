@@ -712,4 +712,10 @@ static void
 __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
 {
     if (lua_isnil(L, tab))
-     
+        return;
+
+    luaL_checktype(L, tab, LUA_TTABLE);
+
+    int i = 1;
+    while (1) {
+        

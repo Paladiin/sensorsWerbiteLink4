@@ -718,4 +718,6 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
 
     int i = 1;
     while (1) {
-        
+        int fd = -1;
+        lua_pushnumber(L, i);
+        lua_gettable(L, tab);   // get ith fd

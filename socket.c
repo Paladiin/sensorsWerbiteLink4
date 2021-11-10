@@ -721,3 +721,8 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
         int fd = -1;
         lua_pushnumber(L, i);
         lua_gettable(L, tab);   // get ith fd
+
+        if (lua_isnil(L, -1)) {
+            // end of table loop
+            lua_pop(L, 1);
+      

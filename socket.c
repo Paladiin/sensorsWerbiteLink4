@@ -739,4 +739,6 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
             continue;
         }
 
-      
+        if (fd != -1) {
+            if (fd >= FD_SETSIZE) {
+                lua

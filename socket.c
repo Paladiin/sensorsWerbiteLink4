@@ -725,4 +725,8 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
         if (lua_isnil(L, -1)) {
             // end of table loop
             lua_pop(L, 1);
-      
+            break;
+        }
+
+        if (lua_isnumber(L, -1)) {
+          

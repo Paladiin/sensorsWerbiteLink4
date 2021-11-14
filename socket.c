@@ -729,4 +729,7 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
         }
 
         if (lua_isnumber(L, -1)) {
-          
+            fd = lua_tonumber(L, -1);
+            if (fd < 0) {
+                fd = -1;
+            }

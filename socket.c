@@ -733,3 +733,10 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
             if (fd < 0) {
                 fd = -1;
             }
+        } else {
+            // ignore
+            lua_pop(L, 1);
+            continue;
+        }
+
+      

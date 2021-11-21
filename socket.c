@@ -746,4 +746,13 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
             if (*max_fd < fd) {
                 *max_fd = fd;
             }
-            FD
+            FD_SET(fd, set);
+        }
+
+        lua_pop(L, 1);
+        i++;
+    }
+}
+
+static void
+__retu

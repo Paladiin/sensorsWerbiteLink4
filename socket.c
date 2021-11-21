@@ -741,4 +741,6 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
 
         if (fd != -1) {
             if (fd >= FD_SETSIZE) {
-                lua
+                luaL_argerror(L, tab, "descriptor too large for set size");
+            }
+            if

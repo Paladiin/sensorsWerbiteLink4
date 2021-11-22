@@ -755,4 +755,8 @@ __collect_fds(lua_State * L, int tab, fd_set * set, int *max_fd)
 }
 
 static void
-__retu
+__return_fd(lua_State * L, fd_set * set, int max_fd)
+{
+    int fd;
+    int i = 1;
+    lua_newtabl

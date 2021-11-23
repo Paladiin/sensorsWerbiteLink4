@@ -759,4 +759,7 @@ __return_fd(lua_State * L, fd_set * set, int max_fd)
 {
     int fd;
     int i = 1;
-    lua_newtabl
+    lua_newtable(L);
+    for (fd = 0; fd < max_fd; fd++) {
+        if (FD_ISSET(fd, set)) {
+            lua_pushnumber(L

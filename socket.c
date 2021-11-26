@@ -770,4 +770,6 @@ __return_fd(lua_State * L, fd_set * set, int max_fd)
 }
 
 /**
- * re
+ * readfds, writefds, err = socket.select(readfds, writefds[, timeout=-1])
+ *
+ *  `readfds`, `wr

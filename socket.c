@@ -772,4 +772,6 @@ __return_fd(lua_State * L, fd_set * set, int max_fd)
 /**
  * readfds, writefds, err = socket.select(readfds, writefds[, timeout=-1])
  *
- *  `readfds`, `wr
+ *  `readfds`, `writefds` are all table of fds (which was returned from
+ *  sockobj:fileno()).
+ 

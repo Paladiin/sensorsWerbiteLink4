@@ -780,4 +780,6 @@ socket_select(lua_State * L)
 {
     int max_fd = -1;
     fd_set rset, wset;
-    
+    struct timeout tm;
+    double timeout = luaL_optnumber(L, 3, -1);
+    timeout_init(&tm, timeout);

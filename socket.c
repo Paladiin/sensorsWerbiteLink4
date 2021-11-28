@@ -774,4 +774,10 @@ __return_fd(lua_State * L, fd_set * set, int max_fd)
  *
  *  `readfds`, `writefds` are all table of fds (which was returned from
  *  sockobj:fileno()).
- 
+ */
+static int
+socket_select(lua_State * L)
+{
+    int max_fd = -1;
+    fd_set rset, wset;
+    

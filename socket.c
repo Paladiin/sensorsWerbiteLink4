@@ -783,3 +783,7 @@ socket_select(lua_State * L)
     struct timeout tm;
     double timeout = luaL_optnumber(L, 3, -1);
     timeout_init(&tm, timeout);
+    FD_ZERO(&rset);
+    FD_ZERO(&wset);
+    __collect_fds(L, 1, &rset, &max_fd);
+  

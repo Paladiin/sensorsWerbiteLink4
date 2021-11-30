@@ -786,4 +786,6 @@ socket_select(lua_State * L)
     FD_ZERO(&rset);
     FD_ZERO(&wset);
     __collect_fds(L, 1, &rset, &max_fd);
-  
+    __collect_fds(L, 2, &wset, &max_fd);
+
+    int ret = __select(max_fd + 1, &rset, &ws

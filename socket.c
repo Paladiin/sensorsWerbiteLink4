@@ -791,4 +791,7 @@ socket_select(lua_State * L)
     int ret = __select(max_fd + 1, &rset, &wset, NULL, &tm);
     if (ret > 0) {
         __return_fd(L, &rset, max_fd + 1);
-        __return_f
+        __return_fd(L, &wset, max_fd + 1);
+        return 2;
+    } else if (ret == 0) {
+        lua_

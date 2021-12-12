@@ -794,4 +794,7 @@ socket_select(lua_State * L)
         __return_fd(L, &wset, max_fd + 1);
         return 2;
     } else if (ret == 0) {
-        lua_
+        lua_pushnil(L);
+        lua_pushnil(L);
+        lua_pushstring(L, ERROR_TIMEOUT);
+     

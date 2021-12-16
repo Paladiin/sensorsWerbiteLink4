@@ -801,4 +801,9 @@ socket_select(lua_State * L)
     } else {
         lua_pushnil(L);
         lua_pushnil(L);
-        lua_pushst
+        lua_pushstring(L, strerror(errno));
+        return 3;
+    }
+}
+
+/*** sock_* methods are common to tcpsocket or u

@@ -806,4 +806,10 @@ socket_select(lua_State * L)
     }
 }
 
-/*** sock_* methods are common to tcpsocket or u
+/*** sock_* methods are common to tcpsocket or udpsocket ***/
+
+/**
+ * fd = sockobj:fileno()
+ *
+ * Return the integer file descriptor of the socket.
+ */

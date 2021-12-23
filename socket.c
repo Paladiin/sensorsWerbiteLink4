@@ -813,3 +813,8 @@ socket_select(lua_State * L)
  *
  * Return the integer file descriptor of the socket.
  */
+static int
+sockobj_fileno(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    lua_pushn

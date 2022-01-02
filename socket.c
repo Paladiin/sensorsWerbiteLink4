@@ -817,4 +817,11 @@ static int
 sockobj_fileno(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    lua_pushn
+    lua_pushnumber(L, s->fd);
+    return 1;
+}
+
+/**
+ * ok, err = sockobj:close()
+ *
+ * Close the so

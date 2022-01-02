@@ -834,4 +834,11 @@ sockobj_close(lua_State * L)
     if (__sockobj_close(L, s) == -1)
         return 2;
 
-    lua_pushboolean(L,
+    lua_pushboolean(L, 1);
+    return 1;
+}
+
+static int
+sockobj_tostring(lua_State * L)
+{
+    struct sockobj *s = getsoc

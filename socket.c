@@ -824,4 +824,11 @@ sockobj_fileno(lua_State * L)
 /**
  * ok, err = sockobj:close()
  *
- * Close the so
+ * Close the socket.
+ */
+static int
+sockobj_close(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+
+   

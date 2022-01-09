@@ -841,4 +841,6 @@ sockobj_close(lua_State * L)
 static int
 sockobj_tostring(lua_State * L)
 {
-    struct sockobj *s = getsoc
+    struct sockobj *s = getsockobj(L);
+    assert(lua_getmetatable(L, -1));
+    luaL_getmetatable(L, TCPSOCK_TYPENAME)

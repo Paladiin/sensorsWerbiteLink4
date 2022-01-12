@@ -843,4 +843,7 @@ sockobj_tostring(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
     assert(lua_getmetatable(L, -1));
-    luaL_getmetatable(L, TCPSOCK_TYPENAME)
+    luaL_getmetatable(L, TCPSOCK_TYPENAME);
+    if (lua_rawequal(L, -1, -2)) {
+        lua_pop(L, 2);
+        lua_pushfstring(L, "

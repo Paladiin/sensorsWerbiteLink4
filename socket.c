@@ -846,4 +846,7 @@ sockobj_tostring(lua_State * L)
     luaL_getmetatable(L, TCPSOCK_TYPENAME);
     if (lua_rawequal(L, -1, -2)) {
         lua_pop(L, 2);
-        lua_pushfstring(L, "
+        lua_pushfstring(L, "<tcpsock: %d>", s->fd);
+    } else {
+        lua_pop(L, 2);
+        lua_pushfs

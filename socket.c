@@ -849,4 +849,10 @@ sockobj_tostring(lua_State * L)
         lua_pushfstring(L, "<tcpsock: %d>", s->fd);
     } else {
         lua_pop(L, 2);
-        lua_pushfs
+        lua_pushfstring(L, "<udpsock: %d>", s->fd);
+    }
+    return 1;
+}
+
+/**
+ * sockobj:settimeout(timeou

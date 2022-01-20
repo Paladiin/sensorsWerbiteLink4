@@ -858,4 +858,7 @@ sockobj_tostring(lua_State * L)
  * sockobj:settimeout(timeout)
  *
  * Set the timeout in seconds for subsequent socket operations.
- * A negative t
+ * A negative timeout indicates that timeout is disabled, which is default.
+ */
+static int
+sockobj_se

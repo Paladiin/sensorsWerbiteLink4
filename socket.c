@@ -873,4 +873,7 @@ sockobj_settimeout(lua_State * L)
  * timeout = sockobj:gettimeout()
  *
  * Returns the timeout in seconds associated with socket.
- * A negati
+ * A negative timeout indicates that timeout is disabled, which is default.
+ */
+static int
+sockobj_gettim

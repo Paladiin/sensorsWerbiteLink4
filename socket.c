@@ -864,4 +864,10 @@ static int
 sockobj_settimeout(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    double timeout = (double
+    double timeout = (double)luaL_checknumber(L, 2);
+    s->sock_timeout = timeout;
+    return 0;
+}
+
+/*
+ * timeo

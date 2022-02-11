@@ -876,4 +876,7 @@ sockobj_settimeout(lua_State * L)
  * A negative timeout indicates that timeout is disabled, which is default.
  */
 static int
-sockobj_gettim
+sockobj_gettimeout(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    lua_pushnumber(L

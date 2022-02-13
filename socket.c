@@ -887,4 +887,7 @@ sockobj_gettimeout(lua_State * L)
  * ok, err = tcpsock:connect(host, port)
  * ok, err = tcpsock:connect("unix:/path/to/unix-domain.sock")
  *
- * Attempts to connect 
+ * Attempts to connect to TCP socket object to a remote server or to a stream
+ * unix domain socket file.
+ */
+sta

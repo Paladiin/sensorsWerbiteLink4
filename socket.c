@@ -879,4 +879,9 @@ static int
 sockobj_gettimeout(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    lua_pushnumber(L
+    lua_pushnumber(L, s->sock_timeout);
+    return 1;
+}
+
+/**
+ * ok, err = tcpsock:connect(host, port)

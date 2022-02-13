@@ -890,4 +890,8 @@ sockobj_gettimeout(lua_State * L)
  * Attempts to connect to TCP socket object to a remote server or to a stream
  * unix domain socket file.
  */
-sta
+static int
+tcpsock_connect(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+  

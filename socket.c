@@ -898,4 +898,6 @@ tcpsock_connect(lua_State * L)
     socklen_t len;
 
     if (s->fd > 0) {
-        return luaL_error(L,
+        return luaL_error(L, "already connected");
+    }
+    if (__sockobj_getaddrfromarg(L, s, S

@@ -894,4 +894,8 @@ static int
 tcpsock_connect(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-  
+    sockaddr_t addr;
+    socklen_t len;
+
+    if (s->fd > 0) {
+        return luaL_error(L,

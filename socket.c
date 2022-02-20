@@ -906,4 +906,12 @@ tcpsock_connect(lua_State * L)
     if (__sockobj_createsocket(L, s, SOCK_STREAM) == -1) {
         return 2;
     }
-    if (__sockobj_connect(L, s, SAS2SA(&addr)
+    if (__sockobj_connect(L, s, SAS2SA(&addr), len) == -1)
+        return 2;
+
+    lua_pushboolean(L, 1);
+    return 1;
+}
+
+/**
+ * ok, err = tcpsock:

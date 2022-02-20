@@ -914,4 +914,5 @@ tcpsock_connect(lua_State * L)
 }
 
 /**
- * ok, err = tcpsock:
+ * ok, err = tcpsock:bind(host, port)
+ * ok, err = tcpsock:connect("unix:/path/to/unix-domain.sock"

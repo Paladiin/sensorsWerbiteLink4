@@ -915,4 +915,10 @@ tcpsock_connect(lua_State * L)
 
 /**
  * ok, err = tcpsock:bind(host, port)
- * ok, err = tcpsock:connect("unix:/path/to/unix-domain.sock"
+ * ok, err = tcpsock:connect("unix:/path/to/unix-domain.sock")
+ */
+static int
+tcpsock_bind(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    sockaddr_t

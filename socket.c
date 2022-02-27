@@ -921,4 +921,9 @@ static int
 tcpsock_bind(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    sockaddr_t
+    sockaddr_t addr;
+    socklen_t len;
+    char *errstr = NULL;
+
+    if (s->fd > 0) {
+        return luaL_error

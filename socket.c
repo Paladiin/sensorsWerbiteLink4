@@ -926,4 +926,6 @@ tcpsock_bind(lua_State * L)
     char *errstr = NULL;
 
     if (s->fd > 0) {
-        return luaL_error
+        return luaL_error(L, "already bound");
+    }
+    if (__sockobj_getaddrfromarg(L, s, SAS2SA(&addr), &len, 1)) {

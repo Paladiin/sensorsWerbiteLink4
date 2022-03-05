@@ -944,4 +944,9 @@ tcpsock_bind(lua_State * L)
     return 1;
 
 err:
- 
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    return 2;
+}
+

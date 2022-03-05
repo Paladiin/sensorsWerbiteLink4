@@ -936,4 +936,12 @@ tcpsock_bind(lua_State * L)
     }
 
     if (bind(s->fd, SAS2SA(&addr), len) < 0) {
-       
+        errstr = strerror(errno);
+        goto err;
+    }
+
+    lua_pushboolean(L, 1);
+    return 1;
+
+err:
+ 

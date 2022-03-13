@@ -953,4 +953,5 @@ err:
 /**
  * ok, err = tcpsock:listen(backlog)
  *
- * Listen for connections make to the soc
+ * Listen for connections make to the socket.
+ * The backlog argument specifies the maximum number of queue connections a

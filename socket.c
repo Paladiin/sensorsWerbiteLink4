@@ -954,4 +954,10 @@ err:
  * ok, err = tcpsock:listen(backlog)
  *
  * Listen for connections make to the socket.
- * The backlog argument specifies the maximum number of queue connections a
+ * The backlog argument specifies the maximum number of queue connections and
+ * should be at least 0.
+ */
+static int
+tcpsock_listen(lua_State * L)
+{
+    s

@@ -950,3 +950,7 @@ err:
     return 2;
 }
 
+/**
+ * ok, err = tcpsock:listen(backlog)
+ *
+ * Listen for connections make to the soc

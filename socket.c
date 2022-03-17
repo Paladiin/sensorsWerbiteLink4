@@ -960,4 +960,8 @@ err:
 static int
 tcpsock_listen(lua_State * L)
 {
-    s
+    struct sockobj *s = getsockobj(L);
+    int backlog;
+    int ret;
+    char *errstr = NULL;
+    backl

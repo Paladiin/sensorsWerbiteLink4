@@ -964,4 +964,5 @@ tcpsock_listen(lua_State * L)
     int backlog;
     int ret;
     char *errstr = NULL;
-    backl
+    backlog = luaL_checknumber(L, 2);
+    /* To avoid problems on systems that don't allow a nega

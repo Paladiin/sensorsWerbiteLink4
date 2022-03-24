@@ -969,3 +969,7 @@ tcpsock_listen(lua_State * L)
      * minimu value of 0. */
     if (backlog < 0) {
         backlog = 0;
+    }
+    ret = listen(s->fd, backlog);
+    if (ret < 0) {
+        errstr = str

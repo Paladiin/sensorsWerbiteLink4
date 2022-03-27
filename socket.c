@@ -972,4 +972,12 @@ tcpsock_listen(lua_State * L)
     }
     ret = listen(s->fd, backlog);
     if (ret < 0) {
-        errstr = str
+        errstr = strerror(ret);
+        goto err;
+    }
+
+    lua_pushboolean(L, 1);
+    return 1;
+
+err:
+    assert(errstr);

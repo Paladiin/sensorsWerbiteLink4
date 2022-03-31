@@ -981,3 +981,10 @@ tcpsock_listen(lua_State * L)
 
 err:
     assert(errstr);
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    return 2;
+}
+
+/**
+ * sock, 

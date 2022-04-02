@@ -989,4 +989,7 @@ err:
 /**
  * sock, err = tcpsock:accept()
  *
- * Accept a connection. The socket must be bound to an address and liste
+ * Accept a connection. The socket must be bound to an address and listening for
+ * connections.
+ *
+ * In case of success, it returns a socket object us

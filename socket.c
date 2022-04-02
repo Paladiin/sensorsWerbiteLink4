@@ -987,4 +987,6 @@ err:
 }
 
 /**
- * sock, 
+ * sock, err = tcpsock:accept()
+ *
+ * Accept a connection. The socket must be bound to an address and liste

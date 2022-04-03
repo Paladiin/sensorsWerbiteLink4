@@ -992,4 +992,5 @@ err:
  * Accept a connection. The socket must be bound to an address and listening for
  * connections.
  *
- * In case of success, it returns a socket object us
+ * In case of success, it returns a socket object usable to read/write data on
+ * the connection. Otherwise, it returns nil and a string d

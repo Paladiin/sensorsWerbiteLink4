@@ -998,4 +998,8 @@ err:
 static int
 tcpsock_accept(lua_State * L)
 {
-    struct sockobj *s 
+    struct sockobj *s = getsockobj(L);
+    sockaddr_t addr;
+    socklen_t addrlen;
+    int clientfd;
+    char *errstr

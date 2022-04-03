@@ -993,4 +993,9 @@ err:
  * connections.
  *
  * In case of success, it returns a socket object usable to read/write data on
- * the connection. Otherwise, it returns nil and a string d
+ * the connection. Otherwise, it returns nil and a string describing the error.
+ */
+static int
+tcpsock_accept(lua_State * L)
+{
+    struct sockobj *s 

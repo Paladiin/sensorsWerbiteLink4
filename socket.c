@@ -1002,4 +1002,7 @@ tcpsock_accept(lua_State * L)
     sockaddr_t addr;
     socklen_t addrlen;
     int clientfd;
-    char *errstr
+    char *errstr = NULL;
+
+    if (!__getsockaddrlen(s, &addrlen)) {
+        errstr = strerror(e

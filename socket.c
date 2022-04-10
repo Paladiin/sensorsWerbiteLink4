@@ -1005,4 +1005,9 @@ tcpsock_accept(lua_State * L)
     char *errstr = NULL;
 
     if (!__getsockaddrlen(s, &addrlen)) {
-        errstr = strerror(e
+        errstr = strerror(errno);
+        goto err;
+    }
+
+    struct timeout tm;
+    timeout_init(&tm, s->sock_time

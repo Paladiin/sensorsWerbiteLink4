@@ -1010,4 +1010,7 @@ tcpsock_accept(lua_State * L)
     }
 
     struct timeout tm;
-    timeout_init(&tm, s->sock_time
+    timeout_init(&tm, s->sock_timeout);
+    int timeout = __waitfd(s, EVENT_READABLE, &tm);
+    if (timeout == -1) {
+ 

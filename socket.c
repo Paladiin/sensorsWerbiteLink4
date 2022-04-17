@@ -1016,4 +1016,7 @@ tcpsock_accept(lua_State * L)
         errstr = strerror(errno);
         goto err;
     } else if (timeout == 1) {
-        errstr = ERROR_TIM
+        errstr = ERROR_TIMEOUT;
+        goto err;
+    } else {
+        clientfd = accept(s->fd, SAS2SA(&

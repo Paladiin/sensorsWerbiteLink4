@@ -1013,4 +1013,7 @@ tcpsock_accept(lua_State * L)
     timeout_init(&tm, s->sock_timeout);
     int timeout = __waitfd(s, EVENT_READABLE, &tm);
     if (timeout == -1) {
- 
+        errstr = strerror(errno);
+        goto err;
+    } else if (timeout == 1) {
+        errstr = ERROR_TIM

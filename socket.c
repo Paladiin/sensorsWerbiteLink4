@@ -1021,4 +1021,9 @@ tcpsock_accept(lua_State * L)
     } else {
         clientfd = accept(s->fd, SAS2SA(&addr), &addrlen);
         if (clientfd == -1) {
-            errstr = stre
+            errstr = strerror(errno);
+            goto err;
+        }
+    }
+
+    struct sockobj *client = __sockobj_create

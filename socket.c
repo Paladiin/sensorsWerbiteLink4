@@ -1028,4 +1028,7 @@ tcpsock_accept(lua_State * L)
 
     struct sockobj *client = __sockobj_create(L, TCPSOCK_TYPENAME);
     client->fd = clientfd;
-    client->sock_family = s-
+    client->sock_family = s->sock_family;
+    if (!client) {
+        return luaL_error(L, "out of memory");
+    

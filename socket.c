@@ -1037,4 +1037,11 @@ tcpsock_accept(lua_State * L)
 err:
     assert(errstr);
     lua_pushnil(L);
-    lua_pushst
+    lua_pushstring(L, errstr);
+    return 2;
+}
+
+/**
+ * bytes, err = tcpsock:write(data)
+ *
+ * This method

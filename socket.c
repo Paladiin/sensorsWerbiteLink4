@@ -1031,4 +1031,10 @@ tcpsock_accept(lua_State * L)
     client->sock_family = s->sock_family;
     if (!client) {
         return luaL_error(L, "out of memory");
-    
+    }
+    return 1;
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushst

@@ -1026,4 +1026,6 @@ tcpsock_accept(lua_State * L)
         }
     }
 
-    struct sockobj *client = __sockobj_create
+    struct sockobj *client = __sockobj_create(L, TCPSOCK_TYPENAME);
+    client->fd = clientfd;
+    client->sock_family = s-

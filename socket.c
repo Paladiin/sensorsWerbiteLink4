@@ -1045,4 +1045,6 @@ err:
  * bytes, err = tcpsock:write(data)
  *
  * This method is a synchronous operation that will not return until all the
- * data has been f
+ * data has been flushed into the system socket send buffer or an error occurs.
+ *
+ * In case o

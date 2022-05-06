@@ -1044,4 +1044,5 @@ err:
 /**
  * bytes, err = tcpsock:write(data)
  *
- * This method
+ * This method is a synchronous operation that will not return until all the
+ * data has been f

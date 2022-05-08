@@ -1048,4 +1048,7 @@ err:
  * data has been flushed into the system socket send buffer or an error occurs.
  *
  * In case of success, it returns the total number of bytes that have been sent.
- * Otherwise
+ * Otherwise, it returns nil and a string describing the error.
+ */
+static int
+tcpsock_write(lua_State

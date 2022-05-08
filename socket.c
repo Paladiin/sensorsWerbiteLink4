@@ -1055,4 +1055,7 @@ tcpsock_write(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
     size_t len;
-    const char *buf = luaL_checkl
+    const char *buf = luaL_checklstring(L, 2, &len);
+
+    if (__sockobj_write(L, s, buf, len) == -1)
+        return 

@@ -1051,4 +1051,8 @@ err:
  * Otherwise, it returns nil and a string describing the error.
  */
 static int
-tcpsock_write(lua_State
+tcpsock_write(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    size_t len;
+    const char *buf = luaL_checkl

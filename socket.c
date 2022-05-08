@@ -1047,4 +1047,5 @@ err:
  * This method is a synchronous operation that will not return until all the
  * data has been flushed into the system socket send buffer or an error occurs.
  *
- * In case o
+ * In case of success, it returns the total number of bytes that have been sent.
+ * Otherwise

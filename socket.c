@@ -1058,4 +1058,13 @@ tcpsock_write(lua_State * L)
     const char *buf = luaL_checklstring(L, 2, &len);
 
     if (__sockobj_write(L, s, buf, len) == -1)
-        return 
+        return 2;
+
+    return 1;
+}
+
+/**
+ * data, err, partial = tcpsock:read(size)
+ */
+static int
+tcpsock_read(lua

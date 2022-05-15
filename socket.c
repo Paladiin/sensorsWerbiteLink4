@@ -1067,4 +1067,7 @@ tcpsock_write(lua_State * L)
  * data, err, partial = tcpsock:read(size)
  */
 static int
-tcpsock_read(lua
+tcpsock_read(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    size_t size = (int)luaL_checknumber(L, 2

@@ -1070,4 +1070,9 @@ static int
 tcpsock_read(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    size_t size = (int)luaL_checknumber(L, 2
+    size_t size = (int)luaL_checknumber(L, 2);
+    char *errstr = NULL;
+    struct buffer *buf = NULL;
+
+    if (s->buf == NULL) {
+        s-

@@ -1080,4 +1080,9 @@ tcpsock_read(lua_State * L)
     buf = s->buf;
 
     if (s->fd == -1) {
-    
+        errstr = ERROR_CLOSED;
+        goto err;
+    }
+
+    struct timeout tm;
+    time

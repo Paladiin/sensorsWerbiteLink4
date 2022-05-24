@@ -1075,4 +1075,9 @@ tcpsock_read(lua_State * L)
     struct buffer *buf = NULL;
 
     if (s->buf == NULL) {
-        s-
+        s->buf = buffer_create(RECV_BUFSIZE);
+    }
+    buf = s->buf;
+
+    if (s->fd == -1) {
+    

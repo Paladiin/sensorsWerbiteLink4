@@ -1085,4 +1085,8 @@ tcpsock_read(lua_State * L)
     }
 
     struct timeout tm;
-    time
+    timeout_init(&tm, s->sock_timeout);
+
+again:
+    if (buffer_size(buf) >= size) {
+        got

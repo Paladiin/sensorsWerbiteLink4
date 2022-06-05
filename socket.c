@@ -1089,4 +1089,9 @@ tcpsock_read(lua_State * L)
 
 again:
     if (buffer_size(buf) >= size) {
-        got
+        goto success;
+    }
+
+    while (1) {
+        int timeout = __waitfd(s, EVENT_READABLE, &tm);
+    

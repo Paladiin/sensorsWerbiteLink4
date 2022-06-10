@@ -1094,4 +1094,6 @@ again:
 
     while (1) {
         int timeout = __waitfd(s, EVENT_READABLE, &tm);
-    
+        if (timeout == -1) {
+            errstr = strerror(errno);
+            goto e

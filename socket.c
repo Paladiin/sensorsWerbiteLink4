@@ -1099,4 +1099,7 @@ again:
             goto err;
         } else if (timeout == 1) {
             errstr = ERROR_TIMEOUT;
-            go
+            goto err;
+        } else {
+            if (buffer_available(buf) < RECV_BUFSIZE) {
+       

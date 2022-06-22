@@ -1104,4 +1104,6 @@ again:
             if (buffer_available(buf) < RECV_BUFSIZE) {
                 buffer_grow(buf, RECV_BUFSIZE - buffer_available(buf));
             }
-           
+            int bytes_read = recv(s->fd, buf->last, RECV_BUFSIZE, 0);
+            if (bytes_read > 0) {
+     

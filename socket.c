@@ -1108,4 +1108,7 @@ again:
             if (bytes_read > 0) {
                 buf->last += bytes_read;
                 goto again;
-            } else if (bytes_rea
+            } else if (bytes_read == 0) {
+                errstr = ERROR_CLOSED;
+                goto err;
+  

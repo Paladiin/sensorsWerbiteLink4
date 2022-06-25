@@ -1111,4 +1111,7 @@ again:
             } else if (bytes_read == 0) {
                 errstr = ERROR_CLOSED;
                 goto err;
-  
+            } else {
+                switch (errno) {
+                case EINTR:
+        

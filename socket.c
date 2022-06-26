@@ -1116,4 +1116,7 @@ again:
                 case EINTR:
                 case EAGAIN:
                     // do nothing, continue
-               
+                    continue;
+                default:
+                    errstr = strerror(errno);
+                

@@ -1114,4 +1114,6 @@ again:
             } else {
                 switch (errno) {
                 case EINTR:
-        
+                case EAGAIN:
+                    // do nothing, continue
+               

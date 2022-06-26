@@ -1119,4 +1119,11 @@ again:
                     continue;
                 default:
                     errstr = strerror(errno);
-                
+                    goto err;
+                }
+            }
+        }
+    }
+
+success:
+    assert(buffer_size(buf) >=

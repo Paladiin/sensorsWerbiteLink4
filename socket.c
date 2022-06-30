@@ -1126,4 +1126,8 @@ again:
     }
 
 success:
-    assert(buffer_size(buf) >=
+    assert(buffer_size(buf) >= size);
+    lua_pushlstring(L, buf->pos, size);
+    buf->pos += size;
+    buffer_shrink(buf);
+    retu

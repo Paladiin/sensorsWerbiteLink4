@@ -1130,4 +1130,10 @@ success:
     lua_pushlstring(L, buf->pos, size);
     buf->pos += size;
     buffer_shrink(buf);
-    retu
+    return 1;
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushstring(L, errstr);
+    l

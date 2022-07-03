@@ -1136,4 +1136,6 @@ err:
     assert(errstr);
     lua_pushnil(L);
     lua_pushstring(L, errstr);
-    l
+    lua_pushlstring(L, buf->pos, buf->last - buf->pos);
+    buf->pos = buf->last;
+  

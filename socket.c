@@ -1143,4 +1143,8 @@ err:
 }
 
 static int
-tcpsock_readuntil_iterator(lua_Stat
+tcpsock_readuntil_iterator(lua_State *L)
+{
+    struct sockobj *s = lua_touserdata(L, lua_upvalueindex(1));
+    char *errstr = NULL;
+ 

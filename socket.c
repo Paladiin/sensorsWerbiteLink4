@@ -1138,4 +1138,9 @@ err:
     lua_pushstring(L, errstr);
     lua_pushlstring(L, buf->pos, buf->last - buf->pos);
     buf->pos = buf->last;
-  
+    buffer_shrink(buf);
+    return 3;
+}
+
+static int
+tcpsock_readuntil_iterator(lua_Stat

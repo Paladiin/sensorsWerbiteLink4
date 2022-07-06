@@ -1149,4 +1149,5 @@ tcpsock_readuntil_iterator(lua_State *L)
     char *errstr = NULL;
     size_t len;
     const char *pattern = lua_tolstring(L, lua_upvalueindex(2), &len);
-    int
+    int state = lua_tointeger(L, lua_upvalueindex(4));
+    int inclusive = lua_toboolean(L, 

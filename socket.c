@@ -1155,4 +1155,7 @@ tcpsock_readuntil_iterator(lua_State *L)
     if (s->buf == NULL) {
         s->buf = buffer_create(RECV_BUFSIZE);
     }
-    struct b
+    struct buffer *buf = s->buf;
+
+    struct timeout tm;
+    timeout_init(&tm, s->sock_timeout);

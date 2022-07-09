@@ -1164,4 +1164,8 @@ again:
     do {
         int i = 0;
         int bytes = buffer_size(buf);
-        if (bytes == 0)
+        if (bytes == 0) {
+            break;
+        }
+        while (i < bytes) {
+            char c = 

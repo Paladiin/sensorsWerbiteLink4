@@ -1168,4 +1168,8 @@ again:
             break;
         }
         while (i < bytes) {
-            char c = 
+            char c = buf->pos[i];
+
+            if (c == pattern[state]) {
+                i++;
+    

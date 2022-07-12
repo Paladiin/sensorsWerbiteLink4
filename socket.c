@@ -1174,4 +1174,7 @@ again:
                 i++;
                 state++;
                 if (state == (int)len) {
-                    /* matche
+                    /* matched */
+                    buf->pos += i;
+                    state = 0;
+                    l

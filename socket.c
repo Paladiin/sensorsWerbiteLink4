@@ -1172,4 +1172,6 @@ again:
 
             if (c == pattern[state]) {
                 i++;
-    
+                state++;
+                if (state == (int)len) {
+                    /* matche

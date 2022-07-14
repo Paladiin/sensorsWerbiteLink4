@@ -1177,4 +1177,5 @@ again:
                     /* matched */
                     buf->pos += i;
                     state = 0;
-                    l
+                    lua_pushinteger(L, state);
+                    lua_replace(L, lua_upvalueindex(4

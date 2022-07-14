@@ -1178,4 +1178,10 @@ again:
                     buf->pos += i;
                     state = 0;
                     lua_pushinteger(L, state);
-                    lua_replace(L, lua_upvalueindex(4
+                    lua_replace(L, lua_upvalueindex(4));
+                    goto matched;
+                }
+                continue;
+            }
+
+     

@@ -1184,4 +1184,9 @@ again:
                 continue;
             }
 
-     
+            if (state == 0) {
+                i++;
+                continue;
+            }
+
+          

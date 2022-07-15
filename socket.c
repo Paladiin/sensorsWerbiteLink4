@@ -1189,4 +1189,9 @@ again:
                 continue;
             }
 
-          
+            state = 0;
+        }
+
+        buf->pos += i;
+        lua_pushinteger(L, state);
+        lua_re

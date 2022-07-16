@@ -1194,4 +1194,8 @@ again:
 
         buf->pos += i;
         lua_pushinteger(L, state);
-        lua_re
+        lua_replace(L, lua_upvalueindex(4));
+    } while (0);
+
+    while (1) {
+        int timeout = __waitf

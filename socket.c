@@ -1198,4 +1198,6 @@ again:
     } while (0);
 
     while (1) {
-        int timeout = __waitf
+        int timeout = __waitfd(s, EVENT_READABLE, &tm);
+        if (timeout == -1) {
+            errstr = strerr

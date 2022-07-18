@@ -1200,4 +1200,7 @@ again:
     while (1) {
         int timeout = __waitfd(s, EVENT_READABLE, &tm);
         if (timeout == -1) {
-            errstr = strerr
+            errstr = strerror(errno);
+            goto err;
+        } else if (timeout == 1) {
+            

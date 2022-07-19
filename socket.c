@@ -1206,4 +1206,5 @@ again:
             errstr = ERROR_TIMEOUT;
             goto err;
         } else {
-            if (buffer_availa
+            if (buffer_available(buf) < RECV_BUFSIZE) {
+                buffer_grow(buf, RECV_BUFSIZE - buffer_available(buf));

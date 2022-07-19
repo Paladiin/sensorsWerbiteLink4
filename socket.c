@@ -1203,4 +1203,7 @@ again:
             errstr = strerror(errno);
             goto err;
         } else if (timeout == 1) {
-            
+            errstr = ERROR_TIMEOUT;
+            goto err;
+        } else {
+            if (buffer_availa

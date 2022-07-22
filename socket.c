@@ -1212,4 +1212,6 @@ again:
             int bytes_read = recv(s->fd, buf->last, RECV_BUFSIZE, 0);
             if (bytes_read > 0) {
                 buf->last += bytes_read;
-            
+                goto again;
+            } else if (bytes_read == 0) {
+                errstr = ERROR

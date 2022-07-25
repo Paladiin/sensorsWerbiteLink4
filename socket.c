@@ -1218,4 +1218,6 @@ again:
                 goto err;
             } else {
                 switch (errno) {
-     
+                case EINTR:
+                case EAGAIN:
+                    // do nothing

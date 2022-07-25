@@ -1214,4 +1214,8 @@ again:
                 buf->last += bytes_read;
                 goto again;
             } else if (bytes_read == 0) {
-                errstr = ERROR
+                errstr = ERROR_CLOSED;
+                goto err;
+            } else {
+                switch (errno) {
+     

@@ -1220,4 +1220,7 @@ again:
                 switch (errno) {
                 case EINTR:
                 case EAGAIN:
-                    // do nothing
+                    // do nothing, continue
+                    continue;
+                default:
+                    errst

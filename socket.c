@@ -1226,4 +1226,10 @@ again:
                     errstr = strerror(errno);
                     goto err;
                 }
-       
+            }
+        }
+    }
+
+matched:
+    if (inclusive) {
+        lua_pushlst

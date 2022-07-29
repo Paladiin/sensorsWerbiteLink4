@@ -1223,4 +1223,7 @@ again:
                     // do nothing, continue
                     continue;
                 default:
-                    errst
+                    errstr = strerror(errno);
+                    goto err;
+                }
+       

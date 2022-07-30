@@ -1232,4 +1232,6 @@ again:
 
 matched:
     if (inclusive) {
-        lua_pushlst
+        lua_pushlstring(L, buf->start, buf->pos - buf->start);
+    } else {
+        lua_pushlstring(L,

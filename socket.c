@@ -1234,4 +1234,10 @@ matched:
     if (inclusive) {
         lua_pushlstring(L, buf->start, buf->pos - buf->start);
     } else {
-        lua_pushlstring(L,
+        lua_pushlstring(L, buf->start, buf->pos - buf->start - len);
+    }
+    buffer_shrink(buf);
+    return 1;
+
+err:
+   

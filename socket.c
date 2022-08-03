@@ -1243,4 +1243,10 @@ err:
     assert(errstr);
     lua_pushnil(L);
     lua_pushstring(L, errstr);
-    lua_pushlstrin
+    lua_pushlstring(L, buf->start, buf->pos - buf->start);
+    buffer_shrink(buf);
+    return 3;
+}
+
+/**
+ * it

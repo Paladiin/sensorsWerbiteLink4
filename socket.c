@@ -1252,4 +1252,9 @@ err:
  * iterator, err = tcpsock:readuntil(pattern, inclusive?)
  */
 static int
-tcpsock_readuntil(lua_State *L
+tcpsock_readuntil(lua_State *L)
+{
+    int n;
+    n = lua_gettop(L);
+    if (n != 2 && n != 3) {
+        return lua

@@ -1249,4 +1249,7 @@ err:
 }
 
 /**
- * it
+ * iterator, err = tcpsock:readuntil(pattern, inclusive?)
+ */
+static int
+tcpsock_readuntil(lua_State *L

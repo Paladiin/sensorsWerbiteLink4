@@ -1257,4 +1257,6 @@ tcpsock_readuntil(lua_State *L)
     int n;
     n = lua_gettop(L);
     if (n != 2 && n != 3) {
-        return lua
+        return luaL_error(L, "expecting 2 or 3 arguments (including the object), but got %d", n);
+    }
+    int

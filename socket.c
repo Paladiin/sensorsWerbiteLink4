@@ -1261,4 +1261,8 @@ tcpsock_readuntil(lua_State *L)
     }
     int type = lua_type(L, 2);
     if (type != LUA_TSTRING) {
-        return luaL_error(L, "pattern shoul
+        return luaL_error(L, "pattern should be string");
+    }
+    if (n == 3) {
+        if (!lua_isboolean(L, 3)) {
+            lu

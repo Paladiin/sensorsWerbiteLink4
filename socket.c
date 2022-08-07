@@ -1268,4 +1268,8 @@ tcpsock_readuntil(lua_State *L)
             luaL_error(L, "the second argument should be boolean value");
         }
     } else {
-    
+        lua_pushboolean(L, 0);
+    }
+    lua_pushinteger(L, 0);
+
+    lua_pushcclosure(L

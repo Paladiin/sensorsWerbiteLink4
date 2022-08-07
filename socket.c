@@ -1265,4 +1265,7 @@ tcpsock_readuntil(lua_State *L)
     }
     if (n == 3) {
         if (!lua_isboolean(L, 3)) {
-            lu
+            luaL_error(L, "the second argument should be boolean value");
+        }
+    } else {
+    

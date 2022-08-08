@@ -1272,4 +1272,11 @@ tcpsock_readuntil(lua_State *L)
     }
     lua_pushinteger(L, 0);
 
-    lua_pushcclosure(L
+    lua_pushcclosure(L, tcpsock_readuntil_iterator, 4);
+    return 1;
+}
+
+/**
+ * ok, err = tcpsock:shutdown(how)
+ *
+ * Shut down one or

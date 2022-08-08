@@ -1279,4 +1279,7 @@ tcpsock_readuntil(lua_State *L)
 /**
  * ok, err = tcpsock:shutdown(how)
  *
- * Shut down one or
+ * Shut down one or both halves of the connection.
+ *
+ * If how is SHUT_RD, further receives are disallowed.
+ * If h

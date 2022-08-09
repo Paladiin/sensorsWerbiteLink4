@@ -1283,4 +1283,9 @@ tcpsock_readuntil(lua_State *L)
  *
  * If how is SHUT_RD, further receives are disallowed.
  * If how is SHUT_WR, further sends are disallowed.
- * If how is SHUT_RDWR, further
+ * If how is SHUT_RDWR, further sends and receives are disallowed.
+ */
+static int
+tcpsock_shutdown(lua_State * L)
+{
+    

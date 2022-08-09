@@ -1282,4 +1282,5 @@ tcpsock_readuntil(lua_State *L)
  * Shut down one or both halves of the connection.
  *
  * If how is SHUT_RD, further receives are disallowed.
- * If h
+ * If how is SHUT_WR, further sends are disallowed.
+ * If how is SHUT_RDWR, further

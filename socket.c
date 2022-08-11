@@ -1288,4 +1288,6 @@ tcpsock_readuntil(lua_State *L)
 static int
 tcpsock_shutdown(lua_State * L)
 {
-    
+    struct sockobj *s = getsockobj(L);
+    int how = luaL_checknumber(L, 2);
+    int ret = shutdo

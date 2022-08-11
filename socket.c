@@ -1290,4 +1290,7 @@ tcpsock_shutdown(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
     int how = luaL_checknumber(L, 2);
-    int ret = shutdo
+    int ret = shutdown(s->fd, how);
+    if (ret < 0) {
+        lua_pushnil(L);
+        lua_pushstring(L, str

@@ -1293,4 +1293,12 @@ tcpsock_shutdown(lua_State * L)
     int ret = shutdown(s->fd, how);
     if (ret < 0) {
         lua_pushnil(L);
-        lua_pushstring(L, str
+        lua_pushstring(L, strerror(errno));
+        return 2;
+    }
+    lua_pushboolean(L, 1);
+    return 1;
+}
+
+/**
+ * ok,

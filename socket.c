@@ -1301,4 +1301,9 @@ tcpsock_shutdown(lua_State * L)
 }
 
 /**
- * ok,
+ * ok, err = tcpsock:setopt(opt, value)
+ */
+static int
+tcpsock_setopt(lua_State * L)
+{
+    struct s

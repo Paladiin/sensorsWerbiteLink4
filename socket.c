@@ -1306,4 +1306,6 @@ tcpsock_shutdown(lua_State * L)
 static int
 tcpsock_setopt(lua_State * L)
 {
-    struct s
+    struct sockobj *s = getsockobj(L);
+    const char *opt = luaL_checkstring(L, 2);
+    int fl

@@ -1308,4 +1308,6 @@ tcpsock_setopt(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
     const char *opt = luaL_checkstring(L, 2);
-    int fl
+    int flag = lua_toboolean(L, 3);
+    socklen_t flagsize;
+    flagsize = sizeof(flag);

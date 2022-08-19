@@ -1311,3 +1311,8 @@ tcpsock_setopt(lua_State * L)
     int flag = lua_toboolean(L, 3);
     socklen_t flagsize;
     flagsize = sizeof(flag);
+    int err;
+    int level;
+    int optname;
+    if (!strcmp(opt, OPT_TCP_KEEPALIVE)) {
+        level =

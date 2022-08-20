@@ -1315,4 +1315,6 @@ tcpsock_setopt(lua_State * L)
     int level;
     int optname;
     if (!strcmp(opt, OPT_TCP_KEEPALIVE)) {
-        level =
+        level = SOL_SOCKET;
+        optname = SO_KEEPALIVE;
+    } else if (!strcmp(opt, OPT_T

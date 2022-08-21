@@ -1320,4 +1320,6 @@ tcpsock_setopt(lua_State * L)
     } else if (!strcmp(opt, OPT_TCP_NODELAY)) {
         level = IPPROTO_TCP;
         optname = TCP_NODELAY;
-    } else if (!strcmp(op
+    } else if (!strcmp(opt, OPT_TCP_REUSEADDR)) {
+        level = SOL_SOCKET;
+        optname = SO_RE

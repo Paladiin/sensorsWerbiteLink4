@@ -1317,4 +1317,7 @@ tcpsock_setopt(lua_State * L)
     if (!strcmp(opt, OPT_TCP_KEEPALIVE)) {
         level = SOL_SOCKET;
         optname = SO_KEEPALIVE;
-    } else if (!strcmp(opt, OPT_T
+    } else if (!strcmp(opt, OPT_TCP_NODELAY)) {
+        level = IPPROTO_TCP;
+        optname = TCP_NODELAY;
+    } else if (!strcmp(op

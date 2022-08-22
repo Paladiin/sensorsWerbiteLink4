@@ -1326,4 +1326,6 @@ tcpsock_setopt(lua_State * L)
     } else {
         return luaL_error(L, "unexpected option: %s", opt);
     }
-    err =
+    err = setsockopt(s->fd, level, optname, (void *)&flag, flagsize);
+    if (err < 0) {
+        lua

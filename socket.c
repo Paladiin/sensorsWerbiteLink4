@@ -1332,4 +1332,11 @@ tcpsock_setopt(lua_State * L)
         lua_pushstring(L, strerror(errno));
         return 2;
     }
-    lua_p
+    lua_pushboolean(L, 1);
+    return 1;
+}
+
+/**
+ * value, err = tcpsock:getopt(opt)
+ */
+static 

@@ -1328,4 +1328,8 @@ tcpsock_setopt(lua_State * L)
     }
     err = setsockopt(s->fd, level, optname, (void *)&flag, flagsize);
     if (err < 0) {
-        lua
+        lua_pushnil(L);
+        lua_pushstring(L, strerror(errno));
+        return 2;
+    }
+    lua_p

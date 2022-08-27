@@ -1339,4 +1339,8 @@ tcpsock_setopt(lua_State * L)
 /**
  * value, err = tcpsock:getopt(opt)
  */
-static 
+static int
+tcpsock_getopt(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    const char *opt = lu

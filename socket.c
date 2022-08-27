@@ -1343,4 +1343,9 @@ static int
 tcpsock_getopt(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    const char *opt = lu
+    const char *opt = luaL_checkstring(L, 2);
+    int flag;
+    int err;
+    socklen_t flagsize = sizeof(flag);
+    int level;
+    in

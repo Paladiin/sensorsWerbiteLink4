@@ -1348,4 +1348,7 @@ tcpsock_getopt(lua_State * L)
     int err;
     socklen_t flagsize = sizeof(flag);
     int level;
-    in
+    int optname;
+    if (!strcmp(opt, OPT_TCP_KEEPALIVE)) {
+        level = SOL_SOCKET;
+        optname

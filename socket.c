@@ -1354,3 +1354,6 @@ tcpsock_getopt(lua_State * L)
         optname = SO_KEEPALIVE;
     } else if (!strcmp(opt, OPT_TCP_NODELAY)) {
         level = IPPROTO_TCP;
+        optname = TCP_NODELAY;
+    } else if (!strcmp(opt, OPT_TCP_REUSEADDR)) {
+        level

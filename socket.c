@@ -1356,4 +1356,7 @@ tcpsock_getopt(lua_State * L)
         level = IPPROTO_TCP;
         optname = TCP_NODELAY;
     } else if (!strcmp(opt, OPT_TCP_REUSEADDR)) {
-        level
+        level = SOL_SOCKET;
+        optname = SO_REUSEADDR;
+    } else {
+        return luaL_error(L, "unexpected option:

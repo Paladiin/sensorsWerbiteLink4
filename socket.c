@@ -1359,4 +1359,7 @@ tcpsock_getopt(lua_State * L)
         level = SOL_SOCKET;
         optname = SO_REUSEADDR;
     } else {
-        return luaL_error(L, "unexpected option:
+        return luaL_error(L, "unexpected option: %s", opt);
+    }
+    err = getsockopt(s->fd, level, optname, (void *)&flag, &flagsize);
+    

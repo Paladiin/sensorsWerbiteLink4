@@ -1365,4 +1365,11 @@ tcpsock_getopt(lua_State * L)
     if (err < 0) {
         lua_pushnil(L);
         lua_pushstring(L, strerror(errno));
-      
+        return 2;
+    }
+    lua_pushboolean(L, flag);
+    return 1;
+}
+
+/**
+ * addr, err = tcpsoc

@@ -1362,4 +1362,7 @@ tcpsock_getopt(lua_State * L)
         return luaL_error(L, "unexpected option: %s", opt);
     }
     err = getsockopt(s->fd, level, optname, (void *)&flag, &flagsize);
-    
+    if (err < 0) {
+        lua_pushnil(L);
+        lua_pushstring(L, strerror(errno));
+      

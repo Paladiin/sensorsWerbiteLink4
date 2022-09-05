@@ -1372,4 +1372,8 @@ tcpsock_getopt(lua_State * L)
 }
 
 /**
- * addr, err = tcpsoc
+ * addr, err = tcpsock:getpeername
+ *
+ * Return the address of the remote endpoint.
+ */
+static 

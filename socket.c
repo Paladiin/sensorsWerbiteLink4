@@ -1383,4 +1383,6 @@ tcpsock_getpeername(lua_State * L)
     sockaddr_t addr;
     socklen_t addrlen;
     int ret = 0, err = 0;
-    if (!__getsocka
+    if (!__getsockaddrlen(s, &addrlen)) {
+        lua_pushnil(L);
+        lua_pushstring(L, "unknown addres

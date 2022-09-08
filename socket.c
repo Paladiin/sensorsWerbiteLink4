@@ -1380,4 +1380,7 @@ static int
 tcpsock_getpeername(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-  
+    sockaddr_t addr;
+    socklen_t addrlen;
+    int ret = 0, err = 0;
+    if (!__getsocka

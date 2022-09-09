@@ -1389,4 +1389,7 @@ tcpsock_getpeername(lua_State * L)
         return 2;
     }
     memset(&addr, 0, addrlen);
-    ret = getpeername(s->f
+    ret = getpeername(s->fd, SAS2SA(&addr), &addrlen);
+    if (ret < 0) {
+        err = errno;
+        lua_pushnil(L)

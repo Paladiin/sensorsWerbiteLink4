@@ -1392,4 +1392,8 @@ tcpsock_getpeername(lua_State * L)
     ret = getpeername(s->fd, SAS2SA(&addr), &addrlen);
     if (ret < 0) {
         err = errno;
-        lua_pushnil(L)
+        lua_pushnil(L);
+        lua_pushstring(L, strerror(err));
+        return 2;
+    }
+    if (__sockobj_makeaddr(

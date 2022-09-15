@@ -1402,4 +1402,9 @@ tcpsock_getpeername(lua_State * L)
 }
 
 /**
- * addr,
+ * addr, err = tcpsock:getsockname()
+ *
+ * Return the address of the local endpoint.
+ */
+static int
+tcpsock_getsock

@@ -1407,4 +1407,7 @@ tcpsock_getpeername(lua_State * L)
  * Return the address of the local endpoint.
  */
 static int
-tcpsock_getsock
+tcpsock_getsockname(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    sockaddr_t a

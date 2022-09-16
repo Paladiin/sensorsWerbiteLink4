@@ -1410,4 +1410,8 @@ static int
 tcpsock_getsockname(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
-    sockaddr_t a
+    sockaddr_t addr;
+    socklen_t addrlen;
+    int ret = 0, err = 0;
+    if (!__getsockaddrlen(s, &addrlen)) {
+ 

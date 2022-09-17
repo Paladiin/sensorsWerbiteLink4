@@ -1414,4 +1414,8 @@ tcpsock_getsockname(lua_State * L)
     socklen_t addrlen;
     int ret = 0, err = 0;
     if (!__getsockaddrlen(s, &addrlen)) {
- 
+        lua_pushnil(L);
+        lua_pushstring(L, "unknown address family");
+        return 2;
+    }
+    memset(

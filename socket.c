@@ -1421,4 +1421,8 @@ tcpsock_getsockname(lua_State * L)
     memset(&addr, 0, addrlen);
     ret = getsockname(s->fd, SAS2SA(&addr), &addrlen);
     if (ret < 0) {
-        e
+        err = errno;
+        lua_pushnil(L);
+        lua_pushstring(L, strerror(err));
+        return 2;
+ 

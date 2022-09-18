@@ -1418,4 +1418,7 @@ tcpsock_getsockname(lua_State * L)
         lua_pushstring(L, "unknown address family");
         return 2;
     }
-    memset(
+    memset(&addr, 0, addrlen);
+    ret = getsockname(s->fd, SAS2SA(&addr), &addrlen);
+    if (ret < 0) {
+        e

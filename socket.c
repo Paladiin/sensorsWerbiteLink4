@@ -1425,4 +1425,7 @@ tcpsock_getsockname(lua_State * L)
         lua_pushnil(L);
         lua_pushstring(L, strerror(err));
         return 2;
- 
+    }
+    if (__sockobj_makeaddr(L, s, SAS2SA(&addr), addrlen) == -1)
+        return 2;
+    retu

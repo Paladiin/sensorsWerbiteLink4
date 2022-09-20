@@ -1428,4 +1428,9 @@ tcpsock_getsockname(lua_State * L)
     }
     if (__sockobj_makeaddr(L, s, SAS2SA(&addr), addrlen) == -1)
         return 2;
-    retu
+    return 1;
+}
+
+/**
+ * ok, err = udpsock:connect(host, port)
+ * ok, err = udpsock:con

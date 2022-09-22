@@ -1433,4 +1433,6 @@ tcpsock_getsockname(lua_State * L)
 
 /**
  * ok, err = udpsock:connect(host, port)
- * ok, err = udpsock:con
+ * ok, err = udpsock:connect("unix:/path/to/unix-domain.sock")
+ *
+ * Attempts to connect a UDP socket 

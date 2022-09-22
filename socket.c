@@ -1435,4 +1435,5 @@ tcpsock_getsockname(lua_State * L)
  * ok, err = udpsock:connect(host, port)
  * ok, err = udpsock:connect("unix:/path/to/unix-domain.sock")
  *
- * Attempts to connect a UDP socket 
+ * Attempts to connect a UDP socket object to a remote server or to a datagram
+ * unix domain socket file. Because the da

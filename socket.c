@@ -1437,4 +1437,5 @@ tcpsock_getsockname(lua_State * L)
  *
  * Attempts to connect a UDP socket object to a remote server or to a datagram
  * unix domain socket file. Because the datagram protocol is actually
- * connection-less, this method does not really establish a "c
+ * connection-less, this method does not really establish a "connection", but
+ * only just set the name of the remote peer for subsequent read/wr

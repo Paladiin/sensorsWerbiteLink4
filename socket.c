@@ -1444,4 +1444,9 @@ tcpsock_getsockname(lua_State * L)
 static int
 udpsock_connect(lua_State * L)
 {
-    struct sockobj *s = 
+    struct sockobj *s = getsockobj(L);
+    sockaddr_t addr;
+    socklen_t len;
+
+    if (s->fd > 0) {
+        return lua

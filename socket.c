@@ -1449,4 +1449,6 @@ udpsock_connect(lua_State * L)
     socklen_t len;
 
     if (s->fd > 0) {
-        return lua
+        return luaL_error(L, "already connected");
+    }
+    if (__sockobj_getaddrfromarg(L, s, SAS2S

@@ -1457,4 +1457,8 @@ udpsock_connect(lua_State * L)
     if (__sockobj_createsocket(L, s, SOCK_DGRAM) == -1) {
         return 2;
     }
-    if (__sockobj_connect(L, s, SAS2SA(
+    if (__sockobj_connect(L, s, SAS2SA(&addr), len) == -1)
+        return 2;
+
+    lua_pushboolean(L, 1);
+    r

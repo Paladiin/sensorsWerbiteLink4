@@ -1461,4 +1461,9 @@ udpsock_connect(lua_State * L)
         return 2;
 
     lua_pushboolean(L, 1);
-    r
+    return 1;
+}
+
+/**
+ * ok, err = udpsock:bind(host, port)
+ * ok, err = udpsock:connect("unix

@@ -1466,4 +1466,9 @@ udpsock_connect(lua_State * L)
 
 /**
  * ok, err = udpsock:bind(host, port)
- * ok, err = udpsock:connect("unix
+ * ok, err = udpsock:connect("unix:/path/to/unix-domain.sock")
+ */
+static int
+udpsock_bind(lua_State * L)
+{
+    struc

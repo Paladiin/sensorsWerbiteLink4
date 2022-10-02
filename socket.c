@@ -1471,4 +1471,7 @@ udpsock_connect(lua_State * L)
 static int
 udpsock_bind(lua_State * L)
 {
-    struc
+    struct sockobj *s = getsockobj(L);
+    sockaddr_t addr;
+    socklen_t len;
+    char *errstr = NULL;

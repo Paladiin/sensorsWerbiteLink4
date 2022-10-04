@@ -1475,3 +1475,8 @@ udpsock_bind(lua_State * L)
     sockaddr_t addr;
     socklen_t len;
     char *errstr = NULL;
+
+    if (s->fd > 0) {
+        return luaL_error(L, "already bound");
+    }
+    i

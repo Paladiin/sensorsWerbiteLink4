@@ -1479,4 +1479,5 @@ udpsock_bind(lua_State * L)
     if (s->fd > 0) {
         return luaL_error(L, "already bound");
     }
-    i
+    if (__sockobj_getaddrfromarg(L, s, SAS2SA(&addr), &len, 1)) {
+        return 2;

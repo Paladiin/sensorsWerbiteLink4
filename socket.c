@@ -1481,3 +1481,8 @@ udpsock_bind(lua_State * L)
     }
     if (__sockobj_getaddrfromarg(L, s, SAS2SA(&addr), &len, 1)) {
         return 2;
+    }
+    if (__sockobj_createsocket(L, s, SOCK_DGRAM) == -1) {
+        return 2;
+    }
+  

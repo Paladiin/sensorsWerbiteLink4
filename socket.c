@@ -1489,3 +1489,11 @@ udpsock_bind(lua_State * L)
         errstr = strerror(errno);
         goto err;
     }
+
+    lua_pushboolean(L, 1);
+    return 1;
+
+err:
+    assert(errstr);
+    lua_pushnil(L);
+    lua_pushs

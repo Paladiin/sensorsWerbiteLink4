@@ -1485,4 +1485,7 @@ udpsock_bind(lua_State * L)
     if (__sockobj_createsocket(L, s, SOCK_DGRAM) == -1) {
         return 2;
     }
-  
+    if (bind(s->fd, SAS2SA(&addr), len) < 0) {
+        errstr = strerror(errno);
+        goto err;
+    }

@@ -1496,4 +1496,11 @@ udpsock_bind(lua_State * L)
 err:
     assert(errstr);
     lua_pushnil(L);
-    lua_pushs
+    lua_pushstring(L, errstr);
+    return 2;
+}
+
+/**
+ * ok, err = udpsock:send(data)
+ *
+ * Writes data on t

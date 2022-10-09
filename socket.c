@@ -1503,4 +1503,6 @@ err:
 /**
  * ok, err = udpsock:send(data)
  *
- * Writes data on t
+ * Writes data on the current UDP or datagram unix domain socket object.
+ *
+ * In case of success, it returns

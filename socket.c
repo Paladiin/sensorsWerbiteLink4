@@ -1505,4 +1505,8 @@ err:
  *
  * Writes data on the current UDP or datagram unix domain socket object.
  *
- * In case of success, it returns
+ * In case of success, it returns true. Otherwise, it returns nil and a string
+ * describing the error.
+ */
+static int
+udpsock_se

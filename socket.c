@@ -1509,4 +1509,8 @@ err:
  * describing the error.
  */
 static int
-udpsock_se
+udpsock_send(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    size_t len;
+    const c

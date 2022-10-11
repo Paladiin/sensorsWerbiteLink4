@@ -1516,4 +1516,6 @@ udpsock_send(lua_State * L)
     const char *buf = luaL_checklstring(L, 2, &len);
 
     struct timeout tm;
-    timeout_init(&tm
+    timeout_init(&tm, s->sock_timeout);
+    size_t sent = 0;
+    if (__sockobj_send(L, s, buf, len, &sent, &t

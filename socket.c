@@ -1518,4 +1518,12 @@ udpsock_send(lua_State * L)
     struct timeout tm;
     timeout_init(&tm, s->sock_timeout);
     size_t sent = 0;
-    if (__sockobj_send(L, s, buf, len, &sent, &t
+    if (__sockobj_send(L, s, buf, len, &sent, &tm) == -1)
+        return 2;
+
+    lua_pushboolean(L, 1);
+    return 1;
+}
+
+/**
+ * ok, err = 

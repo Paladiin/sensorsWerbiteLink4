@@ -1526,4 +1526,5 @@ udpsock_send(lua_State * L)
 }
 
 /**
- * ok, err = 
+ * ok, err = udpsock:sendto(data, host, port)
+ * ok, err = udpsock:sendto(data, "unix:/path/to/unix-domain.soc

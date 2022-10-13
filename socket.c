@@ -1527,4 +1527,7 @@ udpsock_send(lua_State * L)
 
 /**
  * ok, err = udpsock:sendto(data, host, port)
- * ok, err = udpsock:sendto(data, "unix:/path/to/unix-domain.soc
+ * ok, err = udpsock:sendto(data, "unix:/path/to/unix-domain.sock")
+ *
+ * Writes data on the current UDP or datagram unix domain socket object to
+ * sp

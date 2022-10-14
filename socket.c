@@ -1537,3 +1537,7 @@ udpsock_send(lua_State * L)
  */
 static int
 udpsock_sendto(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    size_t len;
+    const char *buf = lu

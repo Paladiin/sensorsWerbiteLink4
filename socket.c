@@ -1540,4 +1540,8 @@ udpsock_sendto(lua_State * L)
 {
     struct sockobj *s = getsockobj(L);
     size_t len;
-    const char *buf = lu
+    const char *buf = luaL_checklstring(L, 2, &len);
+    sockaddr_t addr;
+    socklen_t addrlen;
+
+    if 

@@ -1544,4 +1544,5 @@ udpsock_sendto(lua_State * L)
     sockaddr_t addr;
     socklen_t addrlen;
 
-    if 
+    if (__sockobj_getaddrfromarg(L, s, SAS2SA(&addr), &addrlen, 2)) {
+      

@@ -1545,4 +1545,7 @@ udpsock_sendto(lua_State * L)
     socklen_t addrlen;
 
     if (__sockobj_getaddrfromarg(L, s, SAS2SA(&addr), &addrlen, 2)) {
-      
+        return 2;
+    }
+    if (s->fd == -1) {
+        // create socket if not presente

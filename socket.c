@@ -1548,4 +1548,6 @@ udpsock_sendto(lua_State * L)
         return 2;
     }
     if (s->fd == -1) {
-        // create socket if not presente
+        // create socket if not presented
+        if (__sockobj_createsocket(L, s, SOCK_DGRAM) == -1) {
+            return 2;

@@ -1563,4 +1563,7 @@ udpsock_sendto(lua_State * L)
     return 1;
 }
 
-/
+/**
+ * data, err = udpsock:recv(buffersize)
+ *
+ * Receive up to buffersize bytes from UDP or d

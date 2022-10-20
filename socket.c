@@ -1555,4 +1555,5 @@ udpsock_sendto(lua_State * L)
     }
     struct timeout tm;
     timeout_init(&tm, s->sock_timeout);
-    siz
+    size_t sent = 0;
+    if (__sockobj_sendto(L, s, buf, len, &sent, SAS2SA(&addr), addrlen, &

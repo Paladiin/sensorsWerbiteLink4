@@ -1551,3 +1551,8 @@ udpsock_sendto(lua_State * L)
         // create socket if not presented
         if (__sockobj_createsocket(L, s, SOCK_DGRAM) == -1) {
             return 2;
+        }
+    }
+    struct timeout tm;
+    timeout_init(&tm, s->sock_timeout);
+    siz

@@ -1569,4 +1569,7 @@ udpsock_sendto(lua_State * L)
  * Receive up to buffersize bytes from UDP or datagram unix domain socket
  * object.
  *
- * In case of success, it returns the data recei
+ * In case of success, it returns the data received; in case of error, it
+ * returns nil with a string describing the error.
+ */
+static int

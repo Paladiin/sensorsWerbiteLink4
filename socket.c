@@ -1566,4 +1566,7 @@ udpsock_sendto(lua_State * L)
 /**
  * data, err = udpsock:recv(buffersize)
  *
- * Receive up to buffersize bytes from UDP or d
+ * Receive up to buffersize bytes from UDP or datagram unix domain socket
+ * object.
+ *
+ * In case of success, it returns the data recei

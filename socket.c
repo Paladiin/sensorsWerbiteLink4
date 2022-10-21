@@ -1573,3 +1573,7 @@ udpsock_sendto(lua_State * L)
  * returns nil with a string describing the error.
  */
 static int
+udpsock_recv(lua_State * L)
+{
+    struct sockobj *s = getsockobj(L);
+    size_t buff

@@ -1578,4 +1578,8 @@ udpsock_recv(lua_State * L)
     struct sockobj *s = getsockobj(L);
     size_t buffersize = (int)luaL_checknumber(L, 2);
     struct buffer *buf = NULL;
-    buf = buffer_
+    buf = buffer_create(buffersize);
+    size_t received = 0;
+
+    struct timeout tm;
+    timeout_init(&tm, 

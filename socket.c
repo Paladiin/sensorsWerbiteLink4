@@ -1582,4 +1582,7 @@ udpsock_recv(lua_State * L)
     size_t received = 0;
 
     struct timeout tm;
-    timeout_init(&tm, 
+    timeout_init(&tm, s->sock_timeout);
+
+    if (__sockobj_recv(L, s, buf->last, buffersize, &received, &tm) == -1)
+        return

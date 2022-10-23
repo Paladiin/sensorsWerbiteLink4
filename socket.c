@@ -1585,4 +1585,11 @@ udpsock_recv(lua_State * L)
     timeout_init(&tm, s->sock_timeout);
 
     if (__sockobj_recv(L, s, buf->last, buffersize, &received, &tm) == -1)
-        return
+        return 2;
+
+    lua_pushlstring(L, buf->last, received);
+    return 1;
+}
+
+/**
+ * data, addr, err = udpsock:rec

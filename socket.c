@@ -1594,4 +1594,6 @@ udpsock_recv(lua_State * L)
 /**
  * data, addr, err = udpsock:recvfrom(buffersize)
  *
- * Works exactly as the udpsock:recv method, except it returns the addr as 
+ * Works exactly as the udpsock:recv method, except it returns the addr as extra
+ * return values (and is therefore slightly less efficient) in
+ * case of succe

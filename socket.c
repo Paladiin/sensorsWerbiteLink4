@@ -1612,4 +1612,10 @@ udpsock_recvfrom(lua_State * L)
         lua_pushnil(L);
         lua_pushnil(L);
         lua_pushstring(L, "unknown address family");
-        return
+        return 2;
+    }
+
+    struct timeout tm;
+    timeout_init(&tm, s->sock_timeout);
+
+    if (__sockobj_re

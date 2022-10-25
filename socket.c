@@ -1619,4 +1619,7 @@ udpsock_recvfrom(lua_State * L)
     timeout_init(&tm, s->sock_timeout);
 
     if (__sockobj_recvfrom(L, s, buf->last, buffersize, &received, SAS2SA(&addr), &addrlen, &tm) == -1)
-       
+        return 2;
+
+    lua_pushlstring(L, buf->last, received);
+    if (__sockobj_makea

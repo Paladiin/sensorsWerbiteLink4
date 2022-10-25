@@ -1618,4 +1618,5 @@ udpsock_recvfrom(lua_State * L)
     struct timeout tm;
     timeout_init(&tm, s->sock_timeout);
 
-    if (__sockobj_re
+    if (__sockobj_recvfrom(L, s, buf->last, buffersize, &received, SAS2SA(&addr), &addrlen, &tm) == -1)
+       

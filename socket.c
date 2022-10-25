@@ -1622,4 +1622,6 @@ udpsock_recvfrom(lua_State * L)
         return 2;
 
     lua_pushlstring(L, buf->last, received);
-    if (__sockobj_makea
+    if (__sockobj_makeaddr(L, s, SAS2SA(&addr), addrlen) == -1) {
+        lua_pop(L, 1);
+        return

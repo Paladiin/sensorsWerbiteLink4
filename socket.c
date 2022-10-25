@@ -1604,4 +1604,7 @@ udpsock_recvfrom(lua_State * L)
     struct sockobj *s = getsockobj(L);
     size_t buffersize = (int)luaL_checknumber(L, 2);
     struct buffer *buf = NULL;
- 
+    buf = buffer_create(buffersize);
+    size_t received = 0;
+    sockaddr_t addr;
+    s

@@ -1607,4 +1607,7 @@ udpsock_recvfrom(lua_State * L)
     buf = buffer_create(buffersize);
     size_t received = 0;
     sockaddr_t addr;
-    s
+    socklen_t addrlen;
+    if (!__getsockaddrlen(s, &addrlen)) {
+        lua_pushnil(L);
+        l

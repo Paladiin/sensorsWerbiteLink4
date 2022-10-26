@@ -1624,4 +1624,12 @@ udpsock_recvfrom(lua_State * L)
     lua_pushlstring(L, buf->last, received);
     if (__sockobj_makeaddr(L, s, SAS2SA(&addr), addrlen) == -1) {
         lua_pop(L, 1);
-        return
+        return 2;
+    }
+
+    return 2;
+}
+
+static const luaL_Reg socketlib[] = {
+    {"tcp", socket_tcp},
+ 

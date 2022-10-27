@@ -1637,4 +1637,7 @@ static const luaL_Reg socketlib[] = {
     {NULL, NULL},
 };
 
-static const luaL_
+static const luaL_Reg sockobj_methods[] = {
+    {"__gc", sockobj_close},
+    {"__tostring", sockobj_tostring},
+    {"

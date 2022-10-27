@@ -1632,4 +1632,9 @@ udpsock_recvfrom(lua_State * L)
 
 static const luaL_Reg socketlib[] = {
     {"tcp", socket_tcp},
- 
+    {"udp", socket_udp},
+    {"select", socket_select},
+    {NULL, NULL},
+};
+
+static const luaL_

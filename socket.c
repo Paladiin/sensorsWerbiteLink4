@@ -1647,4 +1647,6 @@ static const luaL_Reg sockobj_methods[] = {
     {NULL, NULL},
 };
 
-static const luaL_
+static const luaL_Reg tcpsock_methods[] = {
+    {"connect", tcpsock_connect},
+    {"bind",

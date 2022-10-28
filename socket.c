@@ -1640,4 +1640,6 @@ static const luaL_Reg socketlib[] = {
 static const luaL_Reg sockobj_methods[] = {
     {"__gc", sockobj_close},
     {"__tostring", sockobj_tostring},
-    {"
+    {"close", sockobj_close},
+    {"fileno", sockobj_fileno},
+    {"settimeout", sockobj_

@@ -1642,4 +1642,9 @@ static const luaL_Reg sockobj_methods[] = {
     {"__tostring", sockobj_tostring},
     {"close", sockobj_close},
     {"fileno", sockobj_fileno},
-    {"settimeout", sockobj_
+    {"settimeout", sockobj_settimeout},
+    {"gettimeout", sockobj_gettimeout},
+    {NULL, NULL},
+};
+
+static const luaL_

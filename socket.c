@@ -1663,4 +1663,6 @@ static const luaL_Reg tcpsock_methods[] = {
     {NULL, NULL},
 };
 
-static const luaL_
+static const luaL_Reg udpsock_methods[] = {
+    {"connect", udpsock_connect},
+    {"bind", udpsock_bind},

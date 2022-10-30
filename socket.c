@@ -1658,4 +1658,9 @@ static const luaL_Reg tcpsock_methods[] = {
     {"shutdown", tcpsock_shutdown},
     {"setopt", tcpsock_setopt},
     {"getopt", tcpsock_getopt},
-    {"getpeername"
+    {"getpeername", tcpsock_getpeername},
+    {"getsockname", tcpsock_getsockname},
+    {NULL, NULL},
+};
+
+static const luaL_

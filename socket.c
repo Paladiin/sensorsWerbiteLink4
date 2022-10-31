@@ -1668,4 +1668,10 @@ static const luaL_Reg udpsock_methods[] = {
     {"bind", udpsock_bind},
     {"send", udpsock_send},
     {"sendto", udpsock_sendto},
-    {"recv", udpso
+    {"recv", udpsock_recv},
+    {"recvfrom", udpsock_recvfrom},
+    {NULL, NULL},
+};
+
+int
+luaopen_ssocket(lua_S

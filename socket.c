@@ -1684,4 +1684,10 @@ luaopen_ssocket(lua_State * L)
     lua_setfield(L, -2, # name)
 
 #define ADD_STR_CONST(name)     \
-    lua_pushstring(L, name
+    lua_pushstring(L, name);  \
+    lua_setfield(L, -2, # name)
+
+    // Module infos:
+    ADD_STR_CONST(_VERSION);
+
+   

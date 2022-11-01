@@ -1679,4 +1679,6 @@ luaopen_ssocket(lua_State * L)
     luaL_checkversion(L);
     luaL_newlib(L, socketlib);
 
-#
+#define ADD_NUM_CONST(name)     \
+    lua_pushnumber(L, name);  \
+    lua_se

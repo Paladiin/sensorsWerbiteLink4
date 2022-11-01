@@ -1690,4 +1690,6 @@ luaopen_ssocket(lua_State * L)
     // Module infos:
     ADD_STR_CONST(_VERSION);
 
-   
+    // OPT_* options
+    ADD_STR_CONST(OPT_TCP_NODELAY);
+    ADD_STR_CONST(OPT_TCP_KEEPALIVE)

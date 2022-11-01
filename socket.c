@@ -1700,4 +1700,5 @@ luaopen_ssocket(lua_State * L)
     ADD_NUM_CONST(SHUT_WR);
     ADD_NUM_CONST(SHUT_RDWR);
 
-    // ERROR_*
+    // ERROR_* some error strings, which can be used to detect errors
+    ADD_STR_CONST(ERROR_TIM

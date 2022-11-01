@@ -1696,4 +1696,8 @@ luaopen_ssocket(lua_State * L)
     ADD_STR_CONST(OPT_TCP_REUSEADDR);
 
     // SHUT_* sock:shutdown() parameters
-    ADD_
+    ADD_NUM_CONST(SHUT_RD);
+    ADD_NUM_CONST(SHUT_WR);
+    ADD_NUM_CONST(SHUT_RDWR);
+
+    // ERROR_*

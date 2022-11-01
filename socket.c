@@ -1681,4 +1681,7 @@ luaopen_ssocket(lua_State * L)
 
 #define ADD_NUM_CONST(name)     \
     lua_pushnumber(L, name);  \
-    lua_se
+    lua_setfield(L, -2, # name)
+
+#define ADD_STR_CONST(name)     \
+    lua_pushstring(L, name

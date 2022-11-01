@@ -1705,4 +1705,6 @@ luaopen_ssocket(lua_State * L)
     ADD_STR_CONST(ERROR_CLOSED);
     ADD_STR_CONST(ERROR_REFUSED);
 
-    // Create a metatabl
+    // Create a metatable for tcp socket userdata.
+    luaL_newmetatable(L, TCPSOCK_TYPENAME);
+    lua_pushvalue(L, -1);

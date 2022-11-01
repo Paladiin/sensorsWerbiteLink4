@@ -1708,3 +1708,5 @@ luaopen_ssocket(lua_State * L)
     // Create a metatable for tcp socket userdata.
     luaL_newmetatable(L, TCPSOCK_TYPENAME);
     lua_pushvalue(L, -1);
+    lua_setfield(L, -2, "__index");     /* metable.__index = metatable */
+    luaL_

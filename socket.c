@@ -1692,4 +1692,8 @@ luaopen_ssocket(lua_State * L)
 
     // OPT_* options
     ADD_STR_CONST(OPT_TCP_NODELAY);
-    ADD_STR_CONST(OPT_TCP_KEEPALIVE)
+    ADD_STR_CONST(OPT_TCP_KEEPALIVE);
+    ADD_STR_CONST(OPT_TCP_REUSEADDR);
+
+    // SHUT_* sock:shutdown() parameters
+    ADD_

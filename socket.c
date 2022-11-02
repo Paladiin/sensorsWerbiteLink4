@@ -1718,4 +1718,7 @@ luaopen_ssocket(lua_State * L)
     lua_pushvalue(L, -1);
     lua_setfield(L, -2, "__index");     /* metable.__index = metatable */
     luaL_setfuncs(L, sockobj_methods, 0);
-    luaL_se
+    luaL_setfuncs(L, udpsock_methods, 0);
+    lua_pop(L, 1);
+
+    // install a handler to ignore si

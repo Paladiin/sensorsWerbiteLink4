@@ -1721,4 +1721,8 @@ luaopen_ssocket(lua_State * L)
     luaL_setfuncs(L, udpsock_methods, 0);
     lua_pop(L, 1);
 
-    // install a handler to ignore si
+    // install a handler to ignore sigpipe or it will crash us
+    signal(SIGPIPE, SIG_IGN);
+
+    return 1;
+}

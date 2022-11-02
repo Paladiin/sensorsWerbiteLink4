@@ -1716,4 +1716,6 @@ luaopen_ssocket(lua_State * L)
     // Create a metatable for udp socket userdata.
     luaL_newmetatable(L, UDPSOCK_TYPENAME);
     lua_pushvalue(L, -1);
-    lua_setfield(L, -2, "__ind
+    lua_setfield(L, -2, "__index");     /* metable.__index = metatable */
+    luaL_setfuncs(L, sockobj_methods, 0);
+    luaL_se

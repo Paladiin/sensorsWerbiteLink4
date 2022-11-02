@@ -6,4 +6,7 @@
 --[[
     require 'Test.More'
     require 'socket'
-    local conn = socket.connect(
+    local conn = socket.connect(host, port)
+    require 'Test.Builder.SocketOutput'.init(conn)
+    -- now, as usual
+    plan(...)

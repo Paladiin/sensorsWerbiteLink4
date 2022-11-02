@@ -1709,4 +1709,5 @@ luaopen_ssocket(lua_State * L)
     luaL_newmetatable(L, TCPSOCK_TYPENAME);
     lua_pushvalue(L, -1);
     lua_setfield(L, -2, "__index");     /* metable.__index = metatable */
-    luaL_
+    luaL_setfuncs(L, sockobj_methods, 0);
+    luaL_setfuncs(L, tcpsock_methods, 0

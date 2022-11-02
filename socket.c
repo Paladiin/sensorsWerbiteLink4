@@ -1710,4 +1710,8 @@ luaopen_ssocket(lua_State * L)
     lua_pushvalue(L, -1);
     lua_setfield(L, -2, "__index");     /* metable.__index = metatable */
     luaL_setfuncs(L, sockobj_methods, 0);
-    luaL_setfuncs(L, tcpsock_methods, 0
+    luaL_setfuncs(L, tcpsock_methods, 0);
+    lua_pop(L, 1);
+
+    // Create a metatable for udp socket userdata.
+    luaL_newme

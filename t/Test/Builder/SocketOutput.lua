@@ -30,3 +30,7 @@ function m.puts (sock, str)
 end
 
 return m
+--
+-- Copyright (c) 2011-2012 Francois Perrad
+--
+-- This library is licensed under the terms 

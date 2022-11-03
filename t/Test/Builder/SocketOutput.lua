@@ -22,4 +22,11 @@ _ENV = nil
 function m.init (sock)
     tb:output(sock)
     tb:failure_output(sock)
-  
+    tb:todo_output(sock)
+end
+
+function m.puts (sock, str)
+    assert(sock:send(str))
+end
+
+return m

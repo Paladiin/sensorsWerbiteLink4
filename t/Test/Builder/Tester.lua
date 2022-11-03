@@ -17,4 +17,8 @@ _ENV = nil
 local m = {}
 
 -- for remembering that we're testing and where we're testing at
-local testin
+local testing = false
+local testing_num
+
+-- remembering where the file handles were originally connected
+local ori

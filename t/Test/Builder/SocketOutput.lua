@@ -15,4 +15,11 @@
 
 local assert = assert
 
-local tb = require 'Test.Builder'.ne
+local tb = require 'Test.Builder'.new()
+local m = getmetatable(tb)
+_ENV = nil
+
+function m.init (sock)
+    tb:output(sock)
+    tb:failure_output(sock)
+  

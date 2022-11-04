@@ -21,4 +21,8 @@ local testing = false
 local testing_num
 
 -- remembering where the file handles were originally connected
-local ori
+local original_output_handle
+local original_failure_handle
+local original_todo_handle
+
+local function _s

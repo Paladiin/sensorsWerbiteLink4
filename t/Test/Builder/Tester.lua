@@ -25,4 +25,6 @@ local original_output_handle
 local original_failure_handle
 local original_todo_handle
 
-local function _s
+local function _start_testing ()
+    -- remember what the handles were set to
+    original_output_handle  

@@ -29,4 +29,8 @@ local function _start_testing ()
     -- remember what the handles were set to
     original_output_handle  = tb:output()
     original_failure_handle = tb:failure_output()
-    original_todo_
+    original_todo_handle    = tb:todo_output()
+
+    -- switch out to our own handles
+    tb:output(out)
+    tb

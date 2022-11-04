@@ -33,4 +33,8 @@ local function _start_testing ()
 
     -- switch out to our own handles
     tb:output(out)
-    tb
+    tb:failure_output(err)
+    tb:todo_output(err)
+
+    -- clear the expected list
+    ou

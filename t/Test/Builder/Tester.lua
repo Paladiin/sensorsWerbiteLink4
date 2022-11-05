@@ -67,4 +67,7 @@ function m.test_fail (offset)
     offset = offset or 0
     if not testing then
         _start_testing()
- 
+    end
+    local info = debug.getinfo(2)
+    local prog = info.short_src
+    local lin

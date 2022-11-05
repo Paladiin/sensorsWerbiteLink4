@@ -45,4 +45,10 @@ local function _start_testing ()
     testing_num = tb:current_test()
     tb:current_test(0)
 
-    -- look, we shouldn't do the end
+    -- look, we shouldn't do the ending stuff
+    tb.no_ending = true
+end
+
+function m.test_out (...)
+    if not testing then
+  

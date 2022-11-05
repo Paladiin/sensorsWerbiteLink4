@@ -51,4 +51,10 @@ end
 
 function m.test_out (...)
     if not testing then
-  
+        _start_testing()
+    end
+    out:expect(...)
+end
+
+function m.test_err (...)
+    if not t

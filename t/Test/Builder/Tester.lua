@@ -93,4 +93,6 @@ function m.test_test (args)
         args = {}
     end
 
-    if not test
+    if not testing then
+        error "Not testing.  You must declare output with a test function first."
+ 

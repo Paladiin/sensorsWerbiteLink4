@@ -87,4 +87,10 @@ end
 function m.test_test (args)
     local mess
     if type(args) == 'table' then
-  
+        mess = args[1]
+    else
+        mess = args
+        args = {}
+    end
+
+    if not test

@@ -77,4 +77,10 @@ end
 function m.test_diag (...)
     local arg = {...}
     if not testing then
-      
+        _start_testing()
+    end
+    for i = 1, #arg do
+        err:expect("# " .. arg[i])
+    end
+end
+

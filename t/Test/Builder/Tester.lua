@@ -84,3 +84,7 @@ function m.test_diag (...)
     end
 end
 
+function m.test_test (args)
+    local mess
+    if type(args) == 'table' then
+  

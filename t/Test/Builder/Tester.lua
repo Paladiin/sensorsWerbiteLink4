@@ -71,4 +71,10 @@ function m.test_fail (offset)
     local info = debug.getinfo(2)
     local prog = info.short_src
     local line = info.currentline + offset
-    err:expect("#     Failed test (" .. prog .. " at line 
+    err:expect("#     Failed test (" .. prog .. " at line " .. line .. ")")
+end
+
+function m.test_diag (...)
+    local arg = {...}
+    if not testing then
+      

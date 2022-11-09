@@ -95,4 +95,7 @@ function m.test_test (args)
 
     if not testing then
         error "Not testing.  You must declare output with a test function first."
- 
+    end
+
+    -- okay, reconnect the test suite back to the saved handles
+    tb:output(origin

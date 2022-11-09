@@ -100,4 +100,7 @@ function m.test_test (args)
     -- okay, reconnect the test suite back to the saved handles
     tb:output(original_output_handle)
     tb:failure_output(original_failure_handle)
-    tb:todo_output(or
+    tb:todo_output(original_todo_handle)
+
+    -- restore the test no, etc, back to the original point
+    tb:cu

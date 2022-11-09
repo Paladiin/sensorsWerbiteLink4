@@ -103,4 +103,8 @@ function m.test_test (args)
     tb:todo_output(original_todo_handle)
 
     -- restore the test no, etc, back to the original point
-    tb:cu
+    tb:current_test(testing_num)
+    testing = false
+
+    -- check the output we've stashed
+    local pa

@@ -111,4 +111,7 @@ function m.test_test (args)
              and (args.skip_err or err:check())
     tb:ok(pass, mess)
     if not pass then
-        -- print out the diagnostic informatio
+        -- print out the diagnostic information about why this
+        -- test failed
+        if not out:check() then
+   

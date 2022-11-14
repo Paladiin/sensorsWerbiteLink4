@@ -123,4 +123,9 @@ function m.test_test (args)
 end
 
 function m.line_num ()
-    re
+    return debug.getinfo(2).currentline
+end
+
+for k, v in pairs(m) do  -- injection
+    _G[k] = v
+en

@@ -15,4 +15,10 @@ local rawget = rawget
 local setmetatable = setmetatable
 local tonumber = tonumber
 local tostring = tostring
-local type = typ
+local type = type
+
+_ENV = nil
+local m = {}
+
+local testout = io and io.stdout
+local testerr = io an

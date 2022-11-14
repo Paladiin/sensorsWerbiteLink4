@@ -12,4 +12,7 @@ local pairs = pairs
 local pcall = pcall
 local print = print
 local rawget = rawget
-local setmetat
+local setmetatable = setmetatable
+local tonumber = tonumber
+local tostring = tostring
+local type = typ

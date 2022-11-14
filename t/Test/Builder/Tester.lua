@@ -117,4 +117,10 @@ function m.test_test (args)
             tb:diag(out:complaint())
         end
         if not err:check() then
-            tb:di
+            tb:diag(err:complaint())
+        end
+    end
+end
+
+function m.line_num ()
+    re

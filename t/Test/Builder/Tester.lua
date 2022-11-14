@@ -128,4 +128,11 @@ end
 
 for k, v in pairs(m) do  -- injection
     _G[k] = v
-en
+end
+
+return m
+
+--
+-- Copyright (c) 2009-2012 Francois Perrad
+--
+-- This library is licensed under t

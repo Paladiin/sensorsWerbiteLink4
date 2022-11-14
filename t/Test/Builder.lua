@@ -8,4 +8,8 @@ local io = require 'io'
 local os = require 'os'
 local table = require 'table'
 local error = error
-local pairs
+local pairs = pairs
+local pcall = pcall
+local print = print
+local rawget = rawget
+local setmetat

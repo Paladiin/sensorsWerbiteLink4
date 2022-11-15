@@ -21,4 +21,10 @@ _ENV = nil
 local m = {}
 
 local testout = io and io.stdout
-local testerr = io an
+local testerr = io and (io.stderr or io.stdout)
+
+function m.puts (f, str)
+    f:write(str)
+end
+
+local fun

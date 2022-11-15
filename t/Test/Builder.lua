@@ -27,4 +27,7 @@ function m.puts (f, str)
     f:write(str)
 end
 
-local fun
+local function _print_to_fh (self, f, ...)
+    if f then
+        local msg = table.concat({...})
+      

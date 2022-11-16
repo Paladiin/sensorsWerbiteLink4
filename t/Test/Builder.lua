@@ -30,4 +30,7 @@ end
 local function _print_to_fh (self, f, ...)
     if f then
         local msg = table.concat({...})
+        msg:gsub("\n", "\n" .. self.indent)
+        m.puts(f, self.indent .. msg .. "\n")
+    else
       

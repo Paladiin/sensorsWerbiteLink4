@@ -38,4 +38,8 @@ local function _print_to_fh (self, f, ...)
 end
 
 local function _print (self, ...)
-    _print_
+    _print_to_fh(self, self:output(), ...)
+end
+
+local function print_comment (self, f, ...)
+    l

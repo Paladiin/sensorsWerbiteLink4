@@ -33,4 +33,9 @@ local function _print_to_fh (self, f, ...)
         msg:gsub("\n", "\n" .. self.indent)
         m.puts(f, self.indent .. msg .. "\n")
     else
-      
+        print(self.indent, ...)
+    end
+end
+
+local function _print (self, ...)
+    _print_

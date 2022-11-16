@@ -42,4 +42,8 @@ local function _print (self, ...)
 end
 
 local function print_comment (self, f, ...)
-    l
+    local arg = {...}
+    for k, v in pairs(arg) do
+        arg[k] = tostring(v)
+    end
+  

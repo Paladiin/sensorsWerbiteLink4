@@ -48,4 +48,6 @@ local function print_comment (self, f, ...)
     end
     local msg = table.concat(arg)
     msg = msg:gsub("\n", "\n# ")
-    msg = msg:gsub("\n
+    msg = msg:gsub("\n# \n", "\n#\n")
+    msg = msg:gsub("\n# $", '')
+    _print_to_fh(self, f, "# ", m

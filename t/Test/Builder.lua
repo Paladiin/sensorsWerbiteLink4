@@ -46,4 +46,6 @@ local function print_comment (self, f, ...)
     for k, v in pairs(arg) do
         arg[k] = tostring(v)
     end
-  
+    local msg = table.concat(arg)
+    msg = msg:gsub("\n", "\n# ")
+    msg = msg:gsub("\n

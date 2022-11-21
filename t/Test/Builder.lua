@@ -59,4 +59,6 @@ function m.create ()
     }
     setmetatable(o, {
         __index = function (t, k)
-           
+                        return rawget(t, 'data')[k]
+                  end,
+        __newin

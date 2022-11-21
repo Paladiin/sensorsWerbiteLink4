@@ -50,4 +50,9 @@ local function print_comment (self, f, ...)
     msg = msg:gsub("\n", "\n# ")
     msg = msg:gsub("\n# \n", "\n#\n")
     msg = msg:gsub("\n# $", '')
-    _print_to_fh(self, f, "# ", m
+    _print_to_fh(self, f, "# ", msg)
+end
+
+function m.create ()
+    local o = {
+        data = setmetatable({}, { __index =

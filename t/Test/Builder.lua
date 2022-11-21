@@ -55,4 +55,8 @@ end
 
 function m.create ()
     local o = {
-        data = setmetatable({}, { __index =
+        data = setmetatable({}, { __index = m }),
+    }
+    setmetatable(o, {
+        __index = function (t, k)
+           

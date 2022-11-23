@@ -63,4 +63,12 @@ function m.create ()
                   end,
         __newindex = function (t, k, v)
                         rawget(o, 'data')[k] = v
-                  en
+                  end,
+    })
+    o:reset()
+    return o
+end
+
+local test
+function m.new ()
+    test = test or 

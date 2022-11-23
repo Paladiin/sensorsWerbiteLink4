@@ -76,4 +76,9 @@ function m.new ()
 end
 
 local function in_todo (self)
-    return self.todo_upto 
+    return self.todo_upto >= self.curr_test
+end
+
+function m:child (name)
+    if self.child_name then
+   

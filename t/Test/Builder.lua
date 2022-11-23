@@ -71,4 +71,9 @@ end
 
 local test
 function m.new ()
-    test = test or 
+    test = test or m.create()
+    return test
+end
+
+local function in_todo (self)
+    return self.todo_upto 

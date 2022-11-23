@@ -61,4 +61,6 @@ function m.create ()
         __index = function (t, k)
                         return rawget(t, 'data')[k]
                   end,
-        __newin
+        __newindex = function (t, k, v)
+                        rawget(o, 'data')[k] = v
+                  en

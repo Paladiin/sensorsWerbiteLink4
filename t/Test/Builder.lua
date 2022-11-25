@@ -81,4 +81,6 @@ end
 
 function m:child (name)
     if self.child_name then
-   
+        error("You already have a child named (" .. self.child_name .. " running")
+    end
+    

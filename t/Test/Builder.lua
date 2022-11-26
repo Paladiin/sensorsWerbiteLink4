@@ -90,3 +90,8 @@ function m:child (name)
     child.todo_file = self.todo_file
     child.parent    = self
     self.child_name = name
+    return child
+end
+
+local function plan_handled (self)
+    return self.have_p

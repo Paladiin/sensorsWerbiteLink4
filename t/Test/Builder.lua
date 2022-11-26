@@ -85,4 +85,5 @@ function m:child (name)
     end
     local child = m.create()
     child.indent    = self.indent .. '    '
-    chil
+    child.out_file  = self.out_file
+    child.fail_file = in_todo(self) and self.todo_file or self.fail_

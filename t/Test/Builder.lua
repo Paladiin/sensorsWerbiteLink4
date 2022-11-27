@@ -99,4 +99,6 @@ end
 
 function m:subtest (name, func)
     if type(func) ~= 'function' then
-        e
+        error("subtest()'s second argument must be a function")
+    end
+    local child 

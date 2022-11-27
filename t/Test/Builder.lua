@@ -94,4 +94,9 @@ function m:child (name)
 end
 
 local function plan_handled (self)
-    return self.have_p
+    return self.have_plan or self.no_plan or self._skip_all
+end
+
+function m:subtest (name, func)
+    if type(func) ~= 'function' then
+        e

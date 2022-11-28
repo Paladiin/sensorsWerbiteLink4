@@ -129,4 +129,7 @@ function m:finalize ()
     if self._skip_all then
         parent:skip(self._skip_all)
     elseif self.curr_test == 0 then
-        parent:ok(false, "No tests run 
+        parent:ok(false, "No tests run for subtest \"" .. name .. "\"", 2)
+    else
+        parent:ok(self.is_passing, name, 2)
+   

@@ -118,4 +118,7 @@ end
 
 function m:finalize ()
     if not self.parent then
-  
+        return
+    end
+    if self.child_name then
+        error("Can't call finalize() with child (" ..

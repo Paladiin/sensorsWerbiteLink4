@@ -132,4 +132,10 @@ function m:finalize ()
         parent:ok(false, "No tests run for subtest \"" .. name .. "\"", 2)
     else
         parent:ok(self.is_passing, name, 2)
-   
+    end
+    self.parent = nil
+end
+
+function m:reset ()
+    self.curr_test = 0
+    self._done_te

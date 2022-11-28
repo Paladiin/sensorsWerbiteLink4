@@ -108,4 +108,7 @@ function m:subtest (name, func)
     child.data = self.data
     self.data = parent
     if not r and not child._skip_all then
-  
+        error(msg, 0)
+    end
+    if not plan_handled(child) then
+        child:done_test

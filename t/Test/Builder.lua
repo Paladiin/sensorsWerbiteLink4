@@ -111,4 +111,11 @@ function m:subtest (name, func)
         error(msg, 0)
     end
     if not plan_handled(child) then
-        child:done_test
+        child:done_testing()
+    end
+    child:finalize()
+end
+
+function m:finalize ()
+    if not self.parent then
+  

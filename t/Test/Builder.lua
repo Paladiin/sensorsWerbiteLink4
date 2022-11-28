@@ -121,4 +121,7 @@ function m:finalize ()
         return
     end
     if self.child_name then
-        error("Can't call finalize() with child (" ..
+        error("Can't call finalize() with child (" .. self.child_name .. " active")
+    end
+    local parent = self.parent
+    local name = par

@@ -124,4 +124,7 @@ function m:finalize ()
         error("Can't call finalize() with child (" .. self.child_name .. " active")
     end
     local parent = self.parent
-    local name = par
+    local name = parent.child_name
+    parent.child_name = nil
+    if self._skip_all then
+        parent:skip(self._s

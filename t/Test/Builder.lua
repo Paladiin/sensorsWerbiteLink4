@@ -101,4 +101,7 @@ function m:subtest (name, func)
     if type(func) ~= 'function' then
         error("subtest()'s second argument must be a function")
     end
-    local child 
+    local child = self:child(name)
+    local parent = self.data
+    self.data = child.data
+    local r, msg = pcall

@@ -127,4 +127,6 @@ function m:finalize ()
     local name = parent.child_name
     parent.child_name = nil
     if self._skip_all then
-        parent:skip(self._s
+        parent:skip(self._skip_all)
+    elseif self.curr_test == 0 then
+        parent:ok(false, "No tests run 

@@ -145,4 +145,8 @@ function m:reset ()
     self.todo_reason = nil
     self.have_plan = false
     self.no_plan = false
-    self._skip_all = fals
+    self._skip_all = false
+    self.have_output_plan = false
+    self.indent = ''
+    self.parent = false
+    self.c

@@ -142,4 +142,7 @@ function m:reset ()
     self.expected_tests = 0
     self.is_passing = true
     self.todo_upto = -1
-    sel
+    self.todo_reason = nil
+    self.have_plan = false
+    self.no_plan = false
+    self._skip_all = fals

@@ -138,4 +138,8 @@ end
 
 function m:reset ()
     self.curr_test = 0
-    self._done_te
+    self._done_testing = false
+    self.expected_tests = 0
+    self.is_passing = true
+    self.todo_upto = -1
+    sel

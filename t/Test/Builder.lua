@@ -153,4 +153,6 @@ function m:reset ()
     self:reset_outputs()
 end
 
-local function _output_plan
+local function _output_plan (self, max, directive, reason)
+    if self.have_output_plan then
+        error("The pl

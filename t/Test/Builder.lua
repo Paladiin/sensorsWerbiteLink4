@@ -159,4 +159,9 @@ local function _output_plan (self, max, directive, reason)
     end
     local out = "1.." .. max
     if directive then
-        out = 
+        out = out .. " # " .. directive
+    end
+    if reason then
+        out = out .. " " .. reason
+    end
+    _print(sel

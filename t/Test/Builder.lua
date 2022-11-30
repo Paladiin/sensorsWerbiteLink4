@@ -149,4 +149,8 @@ function m:reset ()
     self.have_output_plan = false
     self.indent = ''
     self.parent = false
-    self.c
+    self.child_name = false
+    self:reset_outputs()
+end
+
+local function _output_plan

@@ -169,4 +169,7 @@ local function _output_plan (self, max, directive, reason)
 end
 
 function m:plan (arg)
-    if self.have_plan the
+    if self.have_plan then
+        error("You tried to plan twice")
+    end
+    if type(arg) == 'string' and arg =

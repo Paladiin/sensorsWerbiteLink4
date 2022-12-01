@@ -172,4 +172,8 @@ function m:plan (arg)
     if self.have_plan then
         error("You tried to plan twice")
     end
-    if type(arg) == 'string' and arg =
+    if type(arg) == 'string' and arg == 'no_plan' then
+        self.have_plan = true
+        self.no_plan = true
+        return true
+ 

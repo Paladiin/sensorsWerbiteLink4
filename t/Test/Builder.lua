@@ -164,4 +164,9 @@ local function _output_plan (self, max, directive, reason)
     if reason then
         out = out .. " " .. reason
     end
-    _print(sel
+    _print(self, out)
+    self.have_output_plan = true
+end
+
+function m:plan (arg)
+    if self.have_plan the

@@ -178,4 +178,6 @@ function m:plan (arg)
         return true
     elseif type(arg) ~= 'number' then
         error("Need a number of tests")
-    elseif arg < 0 th
+    elseif arg < 0 then
+        error("Number of tests must be a positive integer.  You gave it '" .. arg .."'.")
+   

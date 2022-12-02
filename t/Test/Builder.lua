@@ -183,4 +183,9 @@ function m:plan (arg)
     else
         self.expected_tests = arg
         self.have_plan = true
-      
+        _output_plan(self, arg)
+        return arg
+    end
+end
+
+function m:done_t

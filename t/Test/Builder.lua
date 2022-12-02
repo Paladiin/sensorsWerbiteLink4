@@ -197,4 +197,5 @@ function m:done_testing (num_tests)
         tb:ok(false, "done_testing() was already called")
         return
     end
-    self._done_testing
+    self._done_testing = true
+    if self.expected_tests > 0 and num_tests ~= self.expected_tests then

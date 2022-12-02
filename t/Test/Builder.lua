@@ -192,4 +192,6 @@ function m:done_testing (num_tests)
     if num_tests then
         self.no_plan = false
     end
-    num_te
+    num_tests = num_tests or self.curr_test
+    if self._done_testing then
+        tb:ok(fal

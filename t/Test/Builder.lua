@@ -194,4 +194,7 @@ function m:done_testing (num_tests)
     end
     num_tests = num_tests or self.curr_test
     if self._done_testing then
-        tb:ok(fal
+        tb:ok(false, "done_testing() was already called")
+        return
+    end
+    self._done_testing

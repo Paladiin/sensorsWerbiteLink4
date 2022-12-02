@@ -176,4 +176,6 @@ function m:plan (arg)
         self.have_plan = true
         self.no_plan = true
         return true
- 
+    elseif type(arg) ~= 'number' then
+        error("Need a number of tests")
+    elseif arg < 0 th

@@ -200,4 +200,7 @@ function m:done_testing (num_tests)
     self._done_testing = true
     if self.expected_tests > 0 and num_tests ~= self.expected_tests then
         self:ok(false, "planned to run " .. self.expected_tests
-                    .. " bu
+                    .. " but done_testing() expects " .. num_tests)
+    else
+        self.expected_tests = num_tests
+    e

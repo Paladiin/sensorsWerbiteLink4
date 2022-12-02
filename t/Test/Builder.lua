@@ -180,4 +180,7 @@ function m:plan (arg)
         error("Need a number of tests")
     elseif arg < 0 then
         error("Number of tests must be a positive integer.  You gave it '" .. arg .."'.")
-   
+    else
+        self.expected_tests = arg
+        self.have_plan = true
+      

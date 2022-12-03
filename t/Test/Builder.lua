@@ -203,4 +203,8 @@ function m:done_testing (num_tests)
                     .. " but done_testing() expects " .. num_tests)
     else
         self.expected_tests = num_tests
-    e
+    end
+    if not self.have_output_plan then
+        _output_plan(self, num_tests)
+    end
+    self.have_p

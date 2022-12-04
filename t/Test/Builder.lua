@@ -223,4 +223,10 @@ function m:has_plan ()
         return self.expected_tests
     end
     if self.no_plan then
- 
+        return 'no_plan'
+    end
+    return nil
+end
+
+function m:skip_all (reason)
+    if self.hav

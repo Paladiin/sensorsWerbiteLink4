@@ -213,4 +213,10 @@ function m:done_testing (num_tests)
         self.is_passing = false
     end
     -- No tests were run
-    if self.curr_test == 0 t
+    if self.curr_test == 0 then
+        self.is_passing = false
+    end
+end
+
+function m:has_plan ()
+    if self.expecte

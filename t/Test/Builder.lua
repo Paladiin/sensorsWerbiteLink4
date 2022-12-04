@@ -207,4 +207,6 @@ function m:done_testing (num_tests)
     if not self.have_output_plan then
         _output_plan(self, num_tests)
     end
-    self.have_p
+    self.have_plan = true
+    -- The wrong number of tests were run
+    if self.expected_tests ~= self.curr_test

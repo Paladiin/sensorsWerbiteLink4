@@ -209,4 +209,8 @@ function m:done_testing (num_tests)
     end
     self.have_plan = true
     -- The wrong number of tests were run
-    if self.expected_tests ~= self.curr_test
+    if self.expected_tests ~= self.curr_test then
+        self.is_passing = false
+    end
+    -- No tests were run
+    if self.curr_test == 0 t

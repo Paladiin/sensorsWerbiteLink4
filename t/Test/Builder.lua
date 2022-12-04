@@ -219,4 +219,8 @@ function m:done_testing (num_tests)
 end
 
 function m:has_plan ()
-    if self.expecte
+    if self.expected_tests > 0 then
+        return self.expected_tests
+    end
+    if self.no_plan then
+ 

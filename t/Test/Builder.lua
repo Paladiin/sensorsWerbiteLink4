@@ -232,4 +232,7 @@ function m:skip_all (reason)
     if self.have_plan then
         error("You tried to plan twice")
     end
-    self._skip_all = rea
+    self._skip_all = reason
+    _output_plan(self, 0, 'SKIP', reason)
+    if self.parent then
+        error("ski

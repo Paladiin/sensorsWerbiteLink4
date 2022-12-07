@@ -229,4 +229,7 @@ function m:has_plan ()
 end
 
 function m:skip_all (reason)
-    if self.hav
+    if self.have_plan then
+        error("You tried to plan twice")
+    end
+    self._skip_all = rea

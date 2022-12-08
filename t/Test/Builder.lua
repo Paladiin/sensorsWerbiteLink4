@@ -240,4 +240,6 @@ function m:skip_all (reason)
     os.exit(0)
 end
 
-local function _check_is_passing_
+local function _check_is_passing_plan (self)
+    local plan = self:has_plan()
+    if not plan or not tonumber(plan) t

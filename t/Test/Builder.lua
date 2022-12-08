@@ -242,4 +242,9 @@ end
 
 local function _check_is_passing_plan (self)
     local plan = self:has_plan()
-    if not plan or not tonumber(plan) t
+    if not plan or not tonumber(plan) then
+        return
+    end
+    if plan < self.curr_test then
+        self.is_passing = false
+ 

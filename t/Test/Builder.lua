@@ -252,4 +252,6 @@ end
 
 function m:ok (test, name, level)
     if self.child_name then
-        name = 
+        name = name or 'unnamed test'
+        self.is_passing = false
+        error("Cannot run

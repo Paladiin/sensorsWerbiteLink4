@@ -247,4 +247,9 @@ local function _check_is_passing_plan (self)
     end
     if plan < self.curr_test then
         self.is_passing = false
- 
+    end
+end
+
+function m:ok (test, name, level)
+    if self.child_name then
+        name = 

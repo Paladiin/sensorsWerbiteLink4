@@ -276,4 +276,6 @@ function m:ok (test, name, level)
         out = out .. " # TODO " .. self.todo_reason
     end
     _print(self, out)
-    
+    if not test then
+        local msg = in_todo(self) and "Failed (TODO)" or "Failed"
+     

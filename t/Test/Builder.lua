@@ -254,4 +254,8 @@ function m:ok (test, name, level)
     if self.child_name then
         name = name or 'unnamed test'
         self.is_passing = false
-        error("Cannot run
+        error("Cannot run test (" .. name .. ") with active children")
+    end
+    name = name or ''
+    level = level or 0
+   

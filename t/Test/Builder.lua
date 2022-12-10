@@ -272,4 +272,8 @@ function m:ok (test, name, level)
     if name ~= '' then
         out = out .. " - " .. name
     end
-    if self.todo_reason and in_todo(self) th
+    if self.todo_reason and in_todo(self) then
+        out = out .. " # TODO " .. self.todo_reason
+    end
+    _print(self, out)
+    

@@ -258,4 +258,7 @@ function m:ok (test, name, level)
     end
     name = name or ''
     level = level or 0
-   
+    self.curr_test = self.curr_test + 1
+    name = tostring(name)
+    if name:match('^[%d%s]+$') then
+        

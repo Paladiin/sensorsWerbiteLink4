@@ -265,4 +265,9 @@ function m:ok (test, name, level)
         .. "\n    Very confusing.")
     end
     local out = ''
-    if not t
+    if not test then
+        out = "not "
+    end
+    out = out .. "ok " .. self.curr_test
+    if name ~= '' then
+   

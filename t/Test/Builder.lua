@@ -278,4 +278,5 @@ function m:ok (test, name, level)
     _print(self, out)
     if not test then
         local msg = in_todo(self) and "Failed (TODO)" or "Failed"
-     
+        local info = debug and debug.getinfo(3 + level)
+        if info 

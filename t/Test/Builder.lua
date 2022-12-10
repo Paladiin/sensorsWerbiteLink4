@@ -270,4 +270,6 @@ function m:ok (test, name, level)
     end
     out = out .. "ok " .. self.curr_test
     if name ~= '' then
-   
+        out = out .. " - " .. name
+    end
+    if self.todo_reason and in_todo(self) th

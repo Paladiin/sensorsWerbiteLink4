@@ -261,4 +261,4 @@ function m:ok (test, name, level)
     self.curr_test = self.curr_test + 1
     name = tostring(name)
     if name:match('^[%d%s]+$') then
-        
+        self:diag("    You named your test '" .. name .."'.  You shouldn't use numbers for your

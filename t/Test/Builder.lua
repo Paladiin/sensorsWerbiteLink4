@@ -287,4 +287,6 @@ function m:ok (test, name, level)
             self:diag("    " .. msg .. " test")
         end
     end
-  
+    if not test and not in_todo(self) then
+        self.is_passing = false
+    e

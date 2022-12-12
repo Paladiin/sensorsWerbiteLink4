@@ -282,4 +282,9 @@ function m:ok (test, name, level)
         if info then
             local file = info.short_src
             local line = info.currentline
-            self:diag("    " .. msg .. " test (" .. file .. " at line " .. line .. 
+            self:diag("    " .. msg .. " test (" .. file .. " at line " .. line .. ")")
+        else
+            self:diag("    " .. msg .. " test")
+        end
+    end
+  

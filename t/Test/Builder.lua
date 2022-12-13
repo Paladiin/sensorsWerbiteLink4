@@ -326,4 +326,9 @@ end
 function m:todo_skip (reason)
     local name = "# TODO & SKIP"
     if reason then
-        na
+        name = name .. " " .. reason
+    end
+    self:ok(false, name, 1)
+end
+
+function m:skip_rest (rea

@@ -304,4 +304,10 @@ end
 
 function m:current_test (num)
     if num then
-        sel
+        self.curr_test = num
+    end
+    return self.curr_test
+end
+
+function m:todo (reason, count)
+    coun

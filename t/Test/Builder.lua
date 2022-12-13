@@ -331,4 +331,10 @@ function m:todo_skip (reason)
     self:ok(false, name, 1)
 end
 
-function m:skip_rest (rea
+function m:skip_rest (reason)
+    for i = self.curr_test, self.expected_tests do
+        tb:skip(reason)
+    end
+end
+
+local function diag_fi

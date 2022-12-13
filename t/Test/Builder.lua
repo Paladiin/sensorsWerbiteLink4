@@ -289,4 +289,9 @@ function m:ok (test, name, level)
     end
     if not test and not in_todo(self) then
         self.is_passing = false
-    e
+    end
+    _check_is_passing_plan(self)
+end
+
+function m:BAIL_OUT (reason)
+    local out = "Ba

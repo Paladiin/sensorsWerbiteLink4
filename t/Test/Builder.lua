@@ -310,4 +310,6 @@ function m:current_test (num)
 end
 
 function m:todo (reason, count)
-    coun
+    count = count or 1
+    self.todo_upto = self.curr_test + count
+    self.todo_reaso

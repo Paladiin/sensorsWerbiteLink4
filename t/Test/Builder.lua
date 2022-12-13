@@ -298,4 +298,10 @@ function m:BAIL_OUT (reason)
     if reason then
         out = out .. "  " .. reason
     end
-    _print(self, o
+    _print(self, out)
+    os.exit(255)
+end
+
+function m:current_test (num)
+    if num then
+        sel

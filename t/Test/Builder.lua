@@ -312,4 +312,10 @@ end
 function m:todo (reason, count)
     count = count or 1
     self.todo_upto = self.curr_test + count
-    self.todo_reaso
+    self.todo_reason = reason
+end
+
+function m:skip (reason)
+    local name = "# skip"
+    if reason then
+     

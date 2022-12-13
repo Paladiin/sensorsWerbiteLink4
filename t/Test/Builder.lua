@@ -294,4 +294,8 @@ function m:ok (test, name, level)
 end
 
 function m:BAIL_OUT (reason)
-    local out = "Ba
+    local out = "Bail out!"
+    if reason then
+        out = out .. "  " .. reason
+    end
+    _print(self, o

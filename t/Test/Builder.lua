@@ -337,4 +337,8 @@ function m:skip_rest (reason)
     end
 end
 
-local function diag_fi
+local function diag_file (self)
+    if in_todo(self) then
+        return self:todo_output()
+    else
+        retu

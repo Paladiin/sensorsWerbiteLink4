@@ -341,4 +341,9 @@ local function diag_file (self)
     if in_todo(self) then
         return self:todo_output()
     else
-        retu
+        return self:failure_output()
+    end
+end
+
+function m:diag (...)
+    print_comment(self, 

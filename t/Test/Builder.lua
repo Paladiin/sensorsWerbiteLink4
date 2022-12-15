@@ -364,4 +364,10 @@ function m:failure_output (f)
     if f then
         self.fail_file = f
     end
-    r
+    return self.fail_file
+end
+
+function m:todo_output (f)
+    if f then
+        self.todo_file = f
+ 

@@ -357,4 +357,11 @@ function m:output (f)
     if f then
         self.out_file = f
     end
-    return self.
+    return self.out_file
+end
+
+function m:failure_output (f)
+    if f then
+        self.fail_file = f
+    end
+    r

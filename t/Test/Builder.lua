@@ -376,3 +376,8 @@ end
 
 function m:reset_outputs ()
     self:output(testout)
+    self:failure_output(testerr)
+    self:todo_output(testout)
+end
+
+return m

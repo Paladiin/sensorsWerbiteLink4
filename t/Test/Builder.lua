@@ -370,4 +370,9 @@ end
 function m:todo_output (f)
     if f then
         self.todo_file = f
- 
+    end
+    return self.todo_file
+end
+
+function m:reset_outputs ()
+    self:output(testout)

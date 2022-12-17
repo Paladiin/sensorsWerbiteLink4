@@ -35,3 +35,82 @@ function m.BAIL_OUT (reason)
 end
 
 function m.ok (test, name)
+    tb:ok(test, name)
+end
+
+function m.nok (test, name)
+    tb:ok(not test, name)
+end
+
+function m.is (got, expected, name)
+    local pass = got == expected
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("         got: " .. tostring(got)
+           .. "\n    expected: " .. tostring(expected))
+    end
+end
+
+function m.isnt (got, expected, name)
+    local pass = got ~= expected
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("         got: " .. tostring(got)
+           .. "\n    expected: anything else")
+    end
+end
+
+function m.like (got, pattern, name)
+    if type(pattern) ~= 'string' then
+        tb:ok(false, name)
+        tb:diag("pattern isn't a string : " .. tostring(pattern))
+        return
+    end
+    got = tostring(got)
+    local pass = got:match(pattern)
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("                  '" .. got .. "'"
+           .. "\n    doesn't match '" .. pattern .. "'")
+    end
+end
+
+function m.unlike (got, pattern, name)
+    if type(pattern) ~= 'string' then
+        tb:ok(false, name)
+        tb:diag("pattern isn't a string : " .. tostring(pattern))
+        return
+    end
+    got = tostring(got)
+    local pass = not got:match(pattern)
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("                  '" .. got .. "'"
+           .. "\n          matches '" .. pattern .. "'")
+    end
+end
+
+local cmp = {
+    ['<']  = function (a, b) return a <  b end,
+    ['<='] = function (a, b) return a <= b end,
+    ['>']  = function (a, b) return a >  b end,
+    ['>='] = function (a, b) return a >= b end,
+    ['=='] = function (a, b) return a == b end,
+    ['~='] = function (a, b) return a ~= b end,
+}
+
+function m.cmp_ok (this, op, that, name)
+    local f = cmp[op]
+    if not f then
+        tb:ok(false, name)
+        tb:diag("unknown operator : " .. tostring(op))
+        return
+    end
+    local pass = f(this, that)
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("    " .. tostring(this)
+           .. "\n        " .. op
+           .. "\n    " .. tostring(that))
+    end
+end

@@ -296,3 +296,88 @@ function m.error_like (code, arg2, arg3, arg4)
     local r, msg = pcall(code, unpack(params))
     if r then
         tb:ok(false, name)
+        tb:diag("    unexpected success"
+           .. "\n    expected: " .. tostring(pattern))
+    else
+        if type(pattern) ~= 'string' then
+            tb:ok(false, name)
+            tb:diag("pattern isn't a string : " .. tostring(pattern))
+            return
+        end
+        local pass = msg:match(pattern)
+        tb:ok(pass, name)
+        if not pass then
+            tb:diag("                  '" .. msg .. "'"
+               .. "\n    doesn't match '" .. pattern .. "'")
+        end
+    end
+end
+
+function m.lives_ok (code, arg2, arg3)
+    local params, name
+    if type(arg2) == 'table' then
+        params = arg2
+        name = arg3
+    else
+        params = {}
+        name = arg2
+    end
+    if type(code) == 'string' then
+        local msg
+        code, msg = loadstring(code)
+        if not code then
+            tb:ok(false, name)
+            tb:diag("    can't compile code :"
+               .. "\n    " .. msg)
+            return
+        end
+    end
+    local r, msg = pcall(code, unpack(params))
+    tb:ok(r, name)
+    if not r then
+        tb:diag("    " .. msg)
+    end
+end
+
+function m.diag (msg)
+    tb:diag(msg)
+end
+
+function m.note (msg)
+    tb:note(msg)
+end
+
+function m.skip (reason, count)
+    count = count or 1
+    for i = 1, count do
+        tb:skip(reason)
+    end
+end
+
+function m.todo_skip (reason, count)
+    count = count or 1
+    for i = 1, count do
+        tb:todo_skip(reason)
+    end
+end
+
+function m.skip_rest (reason)
+    tb:skip_rest(reason)
+end
+
+function m.todo (reason, count)
+    tb:todo(reason, count)
+end
+
+for k, v in pairs(m) do  -- injection
+    _G[k] = v
+end
+
+m._VERSION = "0.3.1"
+m._DESCRIPTION = "lua-TestMore : an Unit Testing Framework"
+m._COPYRIGHT = "Copyright (c) 2009-2012 Francois Perrad"
+return m
+--
+-- This library is licensed under the terms of the MIT/X11 license,
+-- like Lua itself.
+--

@@ -204,3 +204,95 @@ function m.is_deeply (got, expected, name)
             if type(v1) == 'table' and type(v2) == 'table' then
                 local r = deep_eq(v1, v2, key_path .. "." .. tostring(k))
                 if not r then
+                    return false
+                end
+            else
+                if v1 ~= v2 then
+                    key_path = key_path .. "." .. tostring(k)
+                    msg1 = "     got" .. key_path .. ": " .. tostring(v1)
+                    msg2 = "expected" .. key_path .. ": " .. tostring(v2)
+                    return false
+                end
+            end
+        end
+        for k in pairs(t1) do
+            local v2 = t2[k]
+            if v2 == nil then
+                key_path = key_path .. "." .. tostring(k)
+                msg1 = "     got" .. key_path .. ": " .. tostring(t1[k])
+                msg2 = "expected" .. key_path .. ": " .. tostring(v2)
+                return false
+            end
+        end
+        return true
+    end -- deep_eq
+
+    local pass = deep_eq(got, expected, '')
+    tb:ok(pass, name)
+    if not pass then
+        tb:diag("    Tables begin differing at:")
+        tb:diag("    " .. msg1)
+        tb:diag("    " .. msg2)
+    end
+end
+
+function m.error_is (code, arg2, arg3, arg4)
+    local params, expected, name
+    if type(arg2) == 'table' then
+        params = arg2
+        expected = arg3
+        name = arg4
+    else
+        params = {}
+        expected = arg2
+        name = arg3
+    end
+    if type(code) == 'string' then
+        local msg
+        code, msg = loadstring(code)
+        if not code then
+            tb:ok(false, name)
+            tb:diag("    can't compile code :"
+               .. "\n    " .. msg)
+            return
+        end
+    end
+    local r, msg = pcall(code, unpack(params))
+    if r then
+        tb:ok(false, name)
+        tb:diag("    unexpected success"
+           .. "\n    expected: " .. tostring(expected))
+    else
+        local pass = msg == expected
+        tb:ok(pass, name)
+        if not pass then
+            tb:diag("         got: " .. msg
+               .. "\n    expected: " .. tostring(expected))
+        end
+    end
+end
+
+function m.error_like (code, arg2, arg3, arg4)
+    local params, pattern, name
+    if type(arg2) == 'table' then
+        params = arg2
+        pattern = arg3
+        name = arg4
+    else
+        params = {}
+        pattern = arg2
+        name = arg3
+    end
+    if type(code) == 'string' then
+        local msg
+        code, msg = loadstring(code)
+        if not code then
+            tb:ok(false, name)
+            tb:diag("    can't compile code :"
+               .. "\n    " .. msg)
+            return
+        end
+    end
+    local r, msg = pcall(code, unpack(params))
+    if r then
+        tb:ok(false, name)

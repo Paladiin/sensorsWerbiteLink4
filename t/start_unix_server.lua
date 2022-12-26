@@ -6,4 +6,8 @@ package.cpath = string.format(";%s/?.so;%s/../?.so;", filedir, filedir) .. packa
 
 local socket = require "ssocket"
 
-TEST_UNIX_SOCK = "/tmp/test-socke
+TEST_UNIX_SOCK = "/tmp/test-socket.sock"
+
+os.remove(TEST_UNIX_SOCK)
+local tcpsock = socket.tcp()
+local ok, err = tcpsock:bind(TEST_UNIX_SOCK)

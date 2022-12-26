@@ -11,3 +11,6 @@ TEST_UNIX_SOCK = "/tmp/test-socket.sock"
 os.remove(TEST_UNIX_SOCK)
 local tcpsock = socket.tcp()
 local ok, err = tcpsock:bind(TEST_UNIX_SOCK)
+tcpsock:listen(5)
+conn, err = tcpsock:accept()
+os.remove(TEST_UNIX_SOCK)

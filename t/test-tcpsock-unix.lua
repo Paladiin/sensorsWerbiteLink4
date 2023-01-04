@@ -22,4 +22,10 @@ tcpsock:close()
 -- 2. bind
 os.remove(TEST_UNIX_SOCK)
 local tcpsock = socket.tcp()
-local ok, err = tcpsoc
+local ok, err = tcpsock:bind(TEST_UNIX_SOCK)
+is(ok, true)
+is(err, nil)
+tcpsock:close()
+
+-- 3. connect
+os.execute(string.form

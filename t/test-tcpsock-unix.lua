@@ -19,3 +19,7 @@ is(ok, nil)
 is(err, "No such file or directory")
 tcpsock:close()
 
+-- 2. bind
+os.remove(TEST_UNIX_SOCK)
+local tcpsock = socket.tcp()
+local ok, err = tcpsoc

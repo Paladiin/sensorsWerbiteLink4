@@ -28,4 +28,5 @@ is(err, nil)
 tcpsock:close()
 
 -- 3. connect
-os.execute(string.form
+os.execute(string.format("%s %s/start_unix_server.lua &>/dev/null &", lua_bin, filedir))
+os.execute("sleep 1") -- make sure service i

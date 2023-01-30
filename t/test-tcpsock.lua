@@ -5,4 +5,9 @@ package.path = string.format(";%s/?.lua;%s/../?.lua;", filedir, filedir) .. pack
 package.cpath = string.format(";%s/?.so;%s/../?.so;", filedir, filedir) .. package.cpath
 
 require 'Test.More'
-local 
+local socket = require "ssocket"
+
+plan(29)
+
+-- 1. Success connection.
+local tcpsock, err = 

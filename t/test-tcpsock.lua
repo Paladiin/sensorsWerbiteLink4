@@ -20,4 +20,7 @@ tcpsock:close()
 
 -- 2. Errors
 is(socket.ERROR_TIMEOUT, "Operation timed out")
-is(socket.ERROR_
+is(socket.ERROR_CLOSED, "Connection closed")
+is(socket.ERROR_REFUSED, "Connection refused")
+
+-- 3. Error: so

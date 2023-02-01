@@ -10,4 +10,6 @@ local socket = require "ssocket"
 plan(29)
 
 -- 1. Success connection.
-local tcpsock, err = 
+local tcpsock, err = socket.tcp()
+local ok, err = tcpsock:connect("yechengfu.com", 80)
+is(ok, true)

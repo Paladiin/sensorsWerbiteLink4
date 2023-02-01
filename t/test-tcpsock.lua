@@ -16,4 +16,8 @@ is(ok, true)
 is(err, nil)
 like(tcpsock, "<tcpsock: %d+>") -- __tostring
 like(tcpsock:fileno(), "%d+")
-tcpsock:c
+tcpsock:close()
+
+-- 2. Errors
+is(socket.ERROR_TIMEOUT, "Operation timed out")
+is(socket.ERROR_

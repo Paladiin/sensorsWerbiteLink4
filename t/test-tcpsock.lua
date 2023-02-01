@@ -13,3 +13,7 @@ plan(29)
 local tcpsock, err = socket.tcp()
 local ok, err = tcpsock:connect("yechengfu.com", 80)
 is(ok, true)
+is(err, nil)
+like(tcpsock, "<tcpsock: %d+>") -- __tostring
+like(tcpsock:fileno(), "%d+")
+tcpsock:c

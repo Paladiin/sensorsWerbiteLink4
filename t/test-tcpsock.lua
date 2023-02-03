@@ -28,4 +28,7 @@ local tcpsock = socket.tcp()
 local ok, err = tcpsock:connect("127.0.0.1", 16787)
 is(ok, nil)
 is(err, socket.ERROR_REFUSED)
-local bytes, err = tcpsock:writ
+local bytes, err = tcpsock:write("hello")
+is(bytes, nil)
+is(err, socket.ERROR_CLOSED)
+local data, err, partial = tcpsock:read(102

@@ -25,4 +25,7 @@ is(socket.ERROR_REFUSED, "Connection refused")
 
 -- 3. Error: socket.ERROR_REFUSED/socket.ERROR_CLOSED
 local tcpsock = socket.tcp()
-local ok, err = tcpsock
+local ok, err = tcpsock:connect("127.0.0.1", 16787)
+is(ok, nil)
+is(err, socket.ERROR_REFUSED)
+local bytes, err = tcpsock:writ

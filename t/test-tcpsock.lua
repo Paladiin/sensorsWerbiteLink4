@@ -23,4 +23,6 @@ is(socket.ERROR_TIMEOUT, "Operation timed out")
 is(socket.ERROR_CLOSED, "Connection closed")
 is(socket.ERROR_REFUSED, "Connection refused")
 
--- 3. Error: so
+-- 3. Error: socket.ERROR_REFUSED/socket.ERROR_CLOSED
+local tcpsock = socket.tcp()
+local ok, err = tcpsock

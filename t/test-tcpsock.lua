@@ -36,4 +36,6 @@ is(err, socket.ERROR_CLOSED)
 tcpsock:close()
 
 -- 4. Error: socket.ERROR_TIMEOUT
-lo
+local tcpsock = socket.tcp()
+tcpsock:settimeout(0.001)
+local ok, err = tcpsock:connect("yechengfu

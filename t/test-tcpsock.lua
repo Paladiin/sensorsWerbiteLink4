@@ -31,4 +31,9 @@ is(err, socket.ERROR_REFUSED)
 local bytes, err = tcpsock:write("hello")
 is(bytes, nil)
 is(err, socket.ERROR_CLOSED)
-local data, err, partial = tcpsock:read(102
+local data, err, partial = tcpsock:read(1024)
+is(err, socket.ERROR_CLOSED)
+tcpsock:close()
+
+-- 4. Error: socket.ERROR_TIMEOUT
+lo

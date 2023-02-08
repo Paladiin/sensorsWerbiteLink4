@@ -45,4 +45,6 @@ local ok, err = tcpsock:connect("yechengfu.com", 80)
 is(ok, nil)
 is(err, socket.ERROR_TIMEOUT)
 local bytes, err = tcpsock:write("hello")
-is(b
+is(bytes, nil)
+is(err, socket.ERROR_CLOSED)
+local data, err, partial = tcpsoc

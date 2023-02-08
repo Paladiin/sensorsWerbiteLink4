@@ -41,4 +41,8 @@ tcpsock:settimeout(0.001)
 local ok, err = tcpsock:connect("yechengfu.com", 16787)
 is(ok, nil)
 is(err, socket.ERROR_TIMEOUT)
-local ok, err = tcpsock:conne
+local ok, err = tcpsock:connect("yechengfu.com", 80)
+is(ok, nil)
+is(err, socket.ERROR_TIMEOUT)
+local bytes, err = tcpsock:write("hello")
+is(b

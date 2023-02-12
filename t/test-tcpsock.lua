@@ -55,4 +55,6 @@ tcpsock:close()
 local tcpsock = socket.tcp()
 local ok, err = tcpsock:connect("yechengfu.com", 80)
 is(ok, true)
-loca
+local value = tcpsock:getopt(socket.OPT_TCP_KEEPALIVE)
+is(value, false)
+local value = tcpsoc

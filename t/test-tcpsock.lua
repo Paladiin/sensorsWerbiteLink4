@@ -52,4 +52,7 @@ is(err, socket.ERROR_CLOSED)
 tcpsock:close()
 
 -- 5. setopt/getopt
-local 
+local tcpsock = socket.tcp()
+local ok, err = tcpsock:connect("yechengfu.com", 80)
+is(ok, true)
+loca

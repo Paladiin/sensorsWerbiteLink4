@@ -60,4 +60,7 @@ is(value, false)
 local value = tcpsock:getopt(socket.OPT_TCP_NODELAY)
 is(value, false)
 local value = tcpsock:getopt(socket.OPT_TCP_REUSEADDR)
-is(value, 
+is(value, false)
+ok, err = tcpsock:setopt(socket.OPT_TCP_KEEPALIVE, true)
+is(ok, true)
+ok, err = tcpsock:setop

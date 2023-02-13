@@ -57,4 +57,7 @@ local ok, err = tcpsock:connect("yechengfu.com", 80)
 is(ok, true)
 local value = tcpsock:getopt(socket.OPT_TCP_KEEPALIVE)
 is(value, false)
-local value = tcpsoc
+local value = tcpsock:getopt(socket.OPT_TCP_NODELAY)
+is(value, false)
+local value = tcpsock:getopt(socket.OPT_TCP_REUSEADDR)
+is(value, 

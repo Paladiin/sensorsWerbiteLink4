@@ -71,4 +71,5 @@ local value = tcpsock:getopt(socket.OPT_TCP_KEEPALIVE)
 is(value, true)
 local value = tcpsock:getopt(socket.OPT_TCP_NODELAY)
 is(value, true)
-local va
+local value = tcpsock:getopt(socket.OPT_TCP_REUSEADDR)
+is(value, true)

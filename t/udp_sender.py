@@ -12,4 +12,5 @@ PACKETDATA = "Hello World! A udp packet."
 # SOCK_DGRAM specifies that this is UDP
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
 
-# connect the s
+# connect the socket, think of it as connecting the cable to the address location
+s.connect((IPA

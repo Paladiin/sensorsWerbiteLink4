@@ -13,4 +13,10 @@ PACKETDATA = "Hello World! A udp packet."
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
 
 # connect the socket, think of it as connecting the cable to the address location
-s.connect((IPA
+s.connect((IPADDR, PORTNUM))
+
+# send the command
+s.send(PACKETDATA)
+
+# close the socket
+s.close()

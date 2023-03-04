@@ -7,4 +7,7 @@ struct timeout {
      * tm_timeout > 0, then tm_deadline = timeout_gettime() + tm_timeout
      */
     double tm_timeout;          /* timeout time (in seconds) */
-    double tm_deadline;         
+    double tm_deadline;         /* time of deadline (seconds since 1970) */
+};
+
+void timeout_init(struct timeout 

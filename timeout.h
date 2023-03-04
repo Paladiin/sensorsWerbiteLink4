@@ -10,4 +10,8 @@ struct timeout {
     double tm_deadline;         /* time of deadline (seconds since 1970) */
 };
 
-void timeout_init(struct timeout 
+void timeout_init(struct timeout *tm, double timeout);
+double timeout_gettime(void);
+double timeout_left(struct timeout *tm);
+
+#endif
